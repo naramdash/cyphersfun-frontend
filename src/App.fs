@@ -1,24 +1,23 @@
 module App
 
-open Fable.Core.JsInterop
-open Fable.Core
+open Feliz
+open Feliz.Router
+
+open App.Pages
+
+[<ReactComponent>]
+let Router () =
+    let (currentUrl, updateUrl) = React.useState (Router.currentPath ())
+
+    React.router [
+
+                   router.pathMode
+                   router.onUrlChanged updateUrl
+                   router.children [ match currentUrl with
+                                     | [] -> RootIndexPage()
+                                     | [ "test" ] -> Html.h1 "Users page"
+                                     //  | [ "users"; Route.Int userId ] -> Html.h1 (sprintf "User ID %d" userId)
+                                     | _ -> Html.h1 "Not found" ] ]
+
 open Browser.Dom
-
-importSideEffects "./style.css"
-
-// Member imports
-[<Import("alertPass", from = "./usets")>]
-let alertPass (msg1: string) (msg2: string) : unit = jsNative
-
-// Get a reference to our button and cast the Element to an HTMLButtonElement
-let app =
-    document.querySelector ("#app") :?> Browser.Types.HTMLDivElement
-
-// Register our listener
-app.innerHTML <-
-    """
-    <h1>Hello Vite!</h1>
-    <a href='https://vitejs.dev/guide/features.html' target='_blank'>Documentation</a>
-"""
-
-app.onclick <- fun _ -> alertPass "123" "abc"
+ReactDOM.render (Router(), document.getElementById "app")
