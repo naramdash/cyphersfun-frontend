@@ -1,22 +1,18 @@
 {
-  "name": "vite-fs-ts",
-  "version": "0.1.0",
+  "name": "cyphersfun-frontend",
+  "version": "0.0.0",
   "scripts": {
-    "postinstall": "dotnet tool restore",
-    "format": "dotnet fantomas . --recurse",
-    "trashfsjs": "trash ./src/**/*.fs.js",
-    "dev": "dotnet fable watch src --run vite",
-    "build": "tsc && dotnet fable src --run vite build",
+    "dev": "vite",
+    "build": "vue-tsc --noEmit && vite build",
     "serve": "vite preview"
   },
-  "devDependencies": {
-    "trash-cli": "^4.0.0",
-    "typescript": "^4.3.2",
-    "vite": "^2.5.4"
-  },
   "dependencies": {
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
-    "tslib": "^2.3.1"
+    "vue": "^3.2.16"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^1.9.3",
+    "typescript": "^4.4.3",
+    "vite": "^2.6.4",
+    "vue-tsc": "^0.3.0"
   }
 }
