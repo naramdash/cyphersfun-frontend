@@ -60,6 +60,7 @@ import {
   DrawingFunctions,
 } from './ImageProcessing/DrawingFunctions'
 import { RotatedRect } from './core/RotatedRect'
+<<<<<<< HEAD
 import {
   ColormapTypes,
   _ColormapTypes,
@@ -113,21 +114,67 @@ import {
 } from './ImageProcessing/Shape'
 import { Moments } from './core/Moments'
 import {
+=======
+import { ColormapTypes, _ColormapTypes, ColorMap } from './ImageProcessing/ColorMap'
+import { Subdiv2D, QuadEdge, Vertex, _EdgeType, EdgeType } from './ImageProcessing/Subdiv2D'
+import {
+  DistanceTypes,
+  _DistanceTypes,
+  _AdaptiveThresholdTypes,
+  _DistanceTransformLabelTypes,
+  _DistanceTransformMasks,
+  _FloodFillFlags,
+  _GrabCutClasses,
+  _GrabCutModes,
+  _ThresholdTypes,
+  AdaptiveThresholdTypes,
+  DistanceTransformLabelTypes,
+  DistanceTransformMasks,
+  FloodFillFlags,
+  GrabCutClasses,
+  GrabCutModes,
+  ThresholdTypes,
+  Misc,
+} from './ImageProcessing/Misc'
+import { HistCompMethods, _HistCompMethods, Histograms } from './ImageProcessing/Histograms'
+import {
+  _ConnectedComponentsAlgorithmsTypes,
+  _ConnectedComponentsTypes,
+  _ContourApproximationModes,
+  _RectanglesIntersectTypes,
+  _RetrievalModes,
+  _ShapeMatchModes,
+  ConnectedComponentsAlgorithmsTypes,
+  ConnectedComponentsTypes,
+  ContourApproximationModes,
+  RectanglesIntersectTypes,
+  RetrievalModes,
+  ShapeMatchModes,
+  StructuralAnalysisShapeDescriptors,
+} from './ImageProcessing/Shape'
+import { Moments } from './core/Moments'
+import {
+>>>>>>> 162d1a36bbc17b3388b5e3862f93bdaa63728312
   _HoughModes,
   _LineSegmentDetectorModes,
   HoughModes,
   LineSegmentDetectorModes,
   FeatureDetection,
 } from './ImageProcessing/Feature'
+<<<<<<< HEAD
 import {
   _TemplateMatchModes,
   TemplateMatchModes,
   ObjectDetection,
 } from './ImageProcessing/Object'
+=======
+import { _TemplateMatchModes, TemplateMatchModes, ObjectDetection } from './ImageProcessing/Object'
+>>>>>>> 162d1a36bbc17b3388b5e3862f93bdaa63728312
 import { ImageSegmentation } from './ImageProcessing/Segmentation'
 import { BackgroundSubtractor } from './video/BackgroundSubtractor'
 import { BackgroundSubtractorMOG2 } from './video/BackgroundSubtractorMOG2'
 import { ObjectDetection as _ObjectDetection } from './ObjectDetection/ObjectDetection'
+<<<<<<< HEAD
 import {
   _Motion,
   _Optflow,
@@ -135,6 +182,9 @@ import {
   Motion,
   ObjectTracking,
 } from './video/track'
+=======
+import { _Motion, _Optflow, Optflow, Motion, ObjectTracking } from './video/track'
+>>>>>>> 162d1a36bbc17b3388b5e3862f93bdaa63728312
 import { MatVector } from './core/MatVector'
 import { dnn, dnn_Net } from './dnn/dnn'
 
@@ -212,6 +262,7 @@ declare module opencv {
       ObjectTracking,
       dnn
   {
+<<<<<<< HEAD
     blobFromImage(
       image: Mat,
       scalefactor: number,
@@ -225,6 +276,11 @@ declare module opencv {
       window: Rect,
       criteria: TermCriteria,
     ): [number, Rect]
+=======
+    blobFromImage(image: Mat, scalefactor: number, size: Size, mean: Scalar, swapRB: boolean): Mat
+    readNet(config: string, model: string): dnn_Net
+    meanShift(probImage: Mat, window: Rect, criteria: TermCriteria): [number, Rect]
+>>>>>>> 162d1a36bbc17b3388b5e3862f93bdaa63728312
     TERM_CRITERIA_COUNT: Type.TERM_CRITERIA_COUNT
     TERM_CRITERIA_MAX_ITER: Type.TERM_CRITERIA_MAX_ITER
     TERM_CRITERIA_EPS: Type.TERM_CRITERIA_EPS
@@ -239,9 +295,13 @@ declare module opencv {
      * Reads image data from a source canvas and outputs it to an instance of cv.Mat
      * @param imageSource source canvas to read imagedata from
      */
+<<<<<<< HEAD
     imread(
       imageSource: string | HTMLImageElement | HTMLCanvasElement,
     ): Mat
+=======
+    imread(imageSource: string | HTMLImageElement | HTMLCanvasElement): Mat
+>>>>>>> 162d1a36bbc17b3388b5e3862f93bdaa63728312
 
     /**
      * Create a Mat from the specified image data.
@@ -256,12 +316,16 @@ declare module opencv {
      * @param type data type of the Mat.
      * @param array source data array.
      */
+<<<<<<< HEAD
     matFromArray(
       rows: number,
       cols: number,
       type: DataTypes,
       array: Array<number>,
     ): Mat
+=======
+    matFromArray(rows: number, cols: number, type: DataTypes, array: Array<number>): Mat
+>>>>>>> 162d1a36bbc17b3388b5e3862f93bdaa63728312
 
     /**
      * Function called when opencv is initialized
@@ -724,6 +788,7 @@ declare module opencv {
     // Core Array functions
     absdiff(src1: Mat, src2: Mat, dst: Mat): void
     add(src1: Mat, src2: Mat, dst: Mat, mask?: Mat): void
+<<<<<<< HEAD
     add(
       src1: Mat,
       src2: Mat,
@@ -731,6 +796,9 @@ declare module opencv {
       mask: Mat,
       dtype: number | DataTypes,
     ): void
+=======
+    add(src1: Mat, src2: Mat, dst: Mat, mask: Mat, dtype: number | DataTypes): void
+>>>>>>> 162d1a36bbc17b3388b5e3862f93bdaa63728312
     addWeighted(
       src1: Mat,
       alpha: number,
@@ -756,11 +824,15 @@ declare module opencv {
     bitwise_not(src: Mat, dst: Mat, mask?: Mat): void
     bitwise_or(src1: Mat, src2: Mat, dst: Mat, mask?: Mat): void
     bitwise_xor(src1: Mat, src2: Mat, dst: Mat, mask?: Mat): void
+<<<<<<< HEAD
     borderInterpolate(
       p: number,
       len: number,
       borderType: BorderTypes,
     ): number
+=======
+    borderInterpolate(p: number, len: number, borderType: BorderTypes): number
+>>>>>>> 162d1a36bbc17b3388b5e3862f93bdaa63728312
     calcCovarMatrix(
       samples: Mat,
       nsamples: number,
@@ -769,6 +841,7 @@ declare module opencv {
       flags: CovarFlags,
       ctype: DataTypes,
     ): void
+<<<<<<< HEAD
     calcCovarMatrix(
       samples: Mat,
       covar: Mat,
@@ -776,6 +849,9 @@ declare module opencv {
       flags: CovarFlags,
       ctype: DataTypes,
     ): void
+=======
+    calcCovarMatrix(samples: Mat, covar: Mat, mean: Mat, flags: CovarFlags, ctype: DataTypes): void
+>>>>>>> 162d1a36bbc17b3388b5e3862f93bdaa63728312
     cartToPolar(
       x: Mat | MatVector,
       y: Mat | MatVector,
@@ -783,6 +859,7 @@ declare module opencv {
       angle: Mat | MatVector,
       angleInDegrees?: boolean,
     ): void
+<<<<<<< HEAD
     checkRange(
       a: Mat | MatVector,
       quiet: boolean,
@@ -790,10 +867,14 @@ declare module opencv {
       minVal: number,
       maxVal: number,
     ): void
+=======
+    checkRange(a: Mat | MatVector, quiet: boolean, pos: Point, minVal: number, maxVal: number): void
+>>>>>>> 162d1a36bbc17b3388b5e3862f93bdaa63728312
     compare(src1: Mat, src2: Mat, dst: Mat, cmpop: CmpTypes): void
     completeSymm(m: Mat | MatVector, lowerToUpper: boolean): void
     convertFp16(src: Mat, dst: Mat): void
     convertScaleAbs(src: Mat, dst: Mat, alpha?: number): void
+<<<<<<< HEAD
     convertScaleAbs(
       src: Mat,
       dst: Mat,
@@ -806,6 +887,10 @@ declare module opencv {
       alpha: number,
       beta: number,
     ): void
+=======
+    convertScaleAbs(src: Mat, dst: Mat, alpha: number, beta?: number): void
+    convertScaleAbs(src: Mat, dst: Mat, alpha: number, beta: number): void
+>>>>>>> 162d1a36bbc17b3388b5e3862f93bdaa63728312
     copyMakeBorder(
       src: Mat,
       dst: Mat,
@@ -820,6 +905,7 @@ declare module opencv {
     countNonZero(src: Mat | MatVector): number
     dct(src: Mat, dst: Mat, flags: DftFlags): void
     determinant(src: Mat): number
+<<<<<<< HEAD
     dft(
       src: Mat,
       dst: Mat,
@@ -840,6 +926,13 @@ declare module opencv {
       eigenvalues: Mat,
       eigenvectors: Mat,
     ): void
+=======
+    dft(src: Mat, dst: Mat, flags: DftFlags, nonzeroRows: number): void
+    divide(src1: Mat, src2: Mat, dst: Mat, scale: number, dtype?: number): void
+    divide(scale: number, src2: Mat, dst: Mat, dtype?: number): void
+    eigen(src: Mat, eigenvalues: Mat, eigenvectors: Mat): void
+    eigenNonSymmetric(src: Mat, eigenvalues: Mat, eigenvectors: Mat): void
+>>>>>>> 162d1a36bbc17b3388b5e3862f93bdaa63728312
     exp(src: Mat, dst: Mat): void
     extractChannel(src: Mat, dst: Mat, coi: number): void
     findNonZero(src: Mat, idx: Mat | NDArray<Point>): void
@@ -857,6 +950,7 @@ declare module opencv {
     hconcat(src: Mat, nsrc: number, dst: number): void
     hconcat(src1: Mat, src2: Mat, dst: Mat): void
     hconcat(src: Mat, dst: Mat, flags: DftFlags): void
+<<<<<<< HEAD
     idft(
       src: Mat,
       dst: Mat,
@@ -869,10 +963,15 @@ declare module opencv {
       upperb: Mat | MatVector,
       dst: Mat,
     ): void
+=======
+    idft(src: Mat, dst: Mat, flags: DftFlags, nonzeroRows: number): void
+    inRange(src: Mat, lowerb: Mat | MatVector, upperb: Mat | MatVector, dst: Mat): void
+>>>>>>> 162d1a36bbc17b3388b5e3862f93bdaa63728312
     insertChannel(src: Mat, dst: Mat, coi: number): void
     invert(src: Mat, dst: Mat, flags: DecompTypes): void
     log(src: Mat, dst: Mat): void
     LUT(src: Mat, lut: Mat, dst: Mat): void
+<<<<<<< HEAD
     magnitude(
       x: Mat | MatVector,
       y: Mat | MatVector,
@@ -883,6 +982,10 @@ declare module opencv {
       v2: Mat | MatVector,
       icovar: Mat,
     ): void
+=======
+    magnitude(x: Mat | MatVector, y: Mat | MatVector, magnitude: Mat): void
+    Mahalanobis(v1: Mat | MatVector, v2: Mat | MatVector, icovar: Mat): void
+>>>>>>> 162d1a36bbc17b3388b5e3862f93bdaa63728312
     max(src1: Mat, src2: Mat, dst: Mat): void
     mean(src: Mat, mask?: Mat): Scalar
     meanStdDev(src: Mat, mean: Mat, stddev: Mat, mask?: Mat): void
@@ -900,12 +1003,16 @@ declare module opencv {
     minMaxLoc(
       src: Mat,
       mask?: Mat,
+<<<<<<< HEAD
     ): {
       minVal: number
       maxVal: number
       minLoc: Point
       maxLoc: Point
     }
+=======
+    ): { minVal: number; maxVal: number; minLoc: Point; maxLoc: Point }
+>>>>>>> 162d1a36bbc17b3388b5e3862f93bdaa63728312
     mixChannels(
       src: Mat,
       nsrcs: number,
@@ -914,6 +1021,7 @@ declare module opencv {
       fromTo: number,
       npairs: number,
     ): void
+<<<<<<< HEAD
     mixChannels(
       src: Mat,
       dst: Mat,
@@ -939,6 +1047,12 @@ declare module opencv {
       scale: number,
       dtype?: DataTypes,
     ): void
+=======
+    mixChannels(src: Mat, dst: Mat, fromTo: number, npairs: number): void
+    mixChannels(src: Mat | MatVector, dst: Mat | MatVector, fromTo: MatVector): void
+    mulSpectrums(a: Mat, b: Mat, c: Mat, flags: DftFlags, conjB?: boolean): void
+    multiply(src1: Mat, src2: Mat, dst: Mat, scale: number, dtype?: DataTypes): void
+>>>>>>> 162d1a36bbc17b3388b5e3862f93bdaa63728312
     mulTransposed(
       src: Mat,
       dst: Mat,
@@ -948,12 +1062,16 @@ declare module opencv {
       dtype?: DataTypes,
     ): void
     norm(src1: Mat, normType: NormTypes, mask?: Mat): number
+<<<<<<< HEAD
     norm(
       src1: Mat,
       src2: Mat,
       normType: NormTypes,
       mask?: Mat,
     ): number
+=======
+    norm(src1: Mat, src2: Mat, normType: NormTypes, mask?: Mat): number
+>>>>>>> 162d1a36bbc17b3388b5e3862f93bdaa63728312
     norm(src: Mat, normType: NormTypes): number
     normalize(
       src: Mat,
@@ -972,12 +1090,16 @@ declare module opencv {
       normType: NormTypes,
       dtype?: DataTypes,
     ): void
+<<<<<<< HEAD
     normalize(
       src: Mat,
       dst: Mat,
       alpha: number,
       normType: NormTypes,
     ): void
+=======
+    normalize(src: Mat, dst: Mat, alpha: number, normType: NormTypes): void
+>>>>>>> 162d1a36bbc17b3388b5e3862f93bdaa63728312
     patchNaNs(a: Mat | MatVector, val: number): void
     PCABackProject(
       data: Mat | MatVector,
@@ -986,12 +1108,16 @@ declare module opencv {
       result: Mat | MatVector,
     ): void
     perspectiveTransform(src: Mat, dst: Mat, m: Mat | MatVector): void
+<<<<<<< HEAD
     phase(
       x: Mat | MatVector,
       y: Mat | MatVector,
       angle: Mat,
       angleInDegrees: boolean,
     ): void
+=======
+    phase(x: Mat | MatVector, y: Mat | MatVector, angle: Mat, angleInDegrees: boolean): void
+>>>>>>> 162d1a36bbc17b3388b5e3862f93bdaa63728312
     polarToCart(
       magnitude: Mat | MatVector,
       angle: Mat | MatVector,
@@ -1001,6 +1127,7 @@ declare module opencv {
     ): void
     pow(src: Mat, power: number, dst: Mat): void
     PSNR(src1: Mat, src2: Mat, R: number): number
+<<<<<<< HEAD
     randn(
       dst: Mat,
       mean: Mat | MatVector,
@@ -1015,6 +1142,12 @@ declare module opencv {
       rtype: ReduceTypes,
       dtype: number | DataTypes,
     ): void
+=======
+    randn(dst: Mat, mean: Mat | MatVector, stddev: Mat | MatVector): void
+    randShuffle(dst: Mat, iterFactor: number, rng: number): void
+    randu(dst: Mat, low: Mat | MatVector, high: Mat | MatVector): void
+    reduce(src: Mat, dst: Mat, dim: number, rtype: ReduceTypes, dtype: number | DataTypes): void
+>>>>>>> 162d1a36bbc17b3388b5e3862f93bdaa63728312
     repeat(src: Mat, ny: number, nx: number, dst: Mat): void
     repeat(src: Mat, ny: number, nx: number): Mat
     scaleAdd(src1: Mat, alpha: number, src2: Mat, dst: Mat): void
@@ -1028,6 +1161,7 @@ declare module opencv {
     split(src: Mat | MatVector, mvbegin: Mat | MatVector): void
     split(src: Mat | MatVector, mv: Mat | MatVector): void
     sqrt(src: Mat, dst: Mat): void
+<<<<<<< HEAD
     subtract(
       src1: Mat,
       src2: Mat,
@@ -1035,6 +1169,9 @@ declare module opencv {
       mask: Mat,
       dtype: number | DataTypes,
     ): void
+=======
+    subtract(src1: Mat, src2: Mat, dst: Mat, mask: Mat, dtype: number | DataTypes): void
+>>>>>>> 162d1a36bbc17b3388b5e3862f93bdaa63728312
     subtract(src1: Mat, src2: Mat, dst: Mat, mask: Mat): void
     subtract(src1: Mat, src2: Mat, dst: Mat): void
     sum(src: Mat | MatVector): Scalar
@@ -1054,6 +1191,7 @@ declare module opencv {
       sigmaSpace: number,
       borderType: BorderTypes,
     ): void
+<<<<<<< HEAD
     blur(
       src: Mat,
       dst: Mat,
@@ -1061,6 +1199,9 @@ declare module opencv {
       anchor: Point,
       borderType: BorderTypes,
     ): void
+=======
+    blur(src: Mat, dst: Mat, ksize: Size, anchor: Point, borderType: BorderTypes): void
+>>>>>>> 162d1a36bbc17b3388b5e3862f93bdaa63728312
     boxFilter(
       src: Mat,
       dst: Mat,
@@ -1070,12 +1211,16 @@ declare module opencv {
       normalize: boolean,
       borderType: BorderTypes,
     ): void
+<<<<<<< HEAD
     buildPyramid(
       src: Mat,
       dst: Mat,
       maxlevel: number,
       borderType: BorderTypes,
     ): void
+=======
+    buildPyramid(src: Mat, dst: Mat, maxlevel: number, borderType: BorderTypes): void
+>>>>>>> 162d1a36bbc17b3388b5e3862f93bdaa63728312
     dilate(
       src: Mat,
       dst: Mat,
@@ -1129,6 +1274,7 @@ declare module opencv {
       psi: number,
       ktype: DataTypes.CV_32F | DataTypes.CV_64F,
     ): Mat
+<<<<<<< HEAD
     getGaussianKernel(
       ksize: number,
       sigma: number,
@@ -1139,6 +1285,10 @@ declare module opencv {
       ksize: Size,
       anchor: Point,
     ): Mat
+=======
+    getGaussianKernel(ksize: number, sigma: number, ktype: DataTypes.CV_32F | DataTypes.CV_64F): Mat
+    getStructuringElement(shape: MorphShapes, ksize: Size, anchor: Point): Mat
+>>>>>>> 162d1a36bbc17b3388b5e3862f93bdaa63728312
     Laplacian(
       src: Mat,
       dst: Mat,
@@ -1160,12 +1310,16 @@ declare module opencv {
       borderType: BorderTypes,
       borderValue: Scalar,
     ): void
+<<<<<<< HEAD
     pyrDown(
       src: Mat,
       dst: Mat,
       dstsize: Size,
       borderType: BorderTypes,
     ): void
+=======
+    pyrDown(src: Mat, dst: Mat, dstsize: Size, borderType: BorderTypes): void
+>>>>>>> 162d1a36bbc17b3388b5e3862f93bdaa63728312
     pyrMeanShiftFiltering(
       src: Mat,
       dst: Mat,
@@ -1174,12 +1328,16 @@ declare module opencv {
       maxLevel: number,
       termcrit: TermCriteria,
     ): void
+<<<<<<< HEAD
     pyrUp(
       src: Mat,
       dst: Mat,
       dstsize: Size,
       borderType: BorderTypes,
     ): void
+=======
+    pyrUp(src: Mat, dst: Mat, dstsize: Size, borderType: BorderTypes): void
+>>>>>>> 162d1a36bbc17b3388b5e3862f93bdaa63728312
     Scharr(
       src: Mat,
       dst: Mat,
@@ -1227,12 +1385,16 @@ declare module opencv {
       normalize: boolean,
       borderType: BorderTypes,
     ): void
+<<<<<<< HEAD
     cvtColor(
       src: Mat,
       dst: Mat,
       code: ColorConversionCodes,
       dstCn?: number,
     ): void
+=======
+    cvtColor(src: Mat, dst: Mat, code: ColorConversionCodes, dstCn?: number): void
+>>>>>>> 162d1a36bbc17b3388b5e3862f93bdaa63728312
     cvtColorTwoPlane(
       src1: Mat,
       src2: Mat,
@@ -1285,11 +1447,15 @@ declare module opencv {
     ): void
     getAffineTransform(src: Point, dst: Point): Mat
     getAffineTransform(src: Mat, dst: Mat): Mat
+<<<<<<< HEAD
     getPerspectiveTransform(
       src: Mat,
       dst: Mat,
       solveMethod?: number | DecompTypes,
     ): Mat
+=======
+    getPerspectiveTransform(src: Mat, dst: Mat, solveMethod?: number | DecompTypes): Mat
+>>>>>>> 162d1a36bbc17b3388b5e3862f93bdaa63728312
     getRectSubPix(
       image: Mat,
       patchSize: Size,
@@ -1297,6 +1463,7 @@ declare module opencv {
       patch: Mat,
       patchType?: number | DataTypes,
     ): void
+<<<<<<< HEAD
     getRotationMatrix2D(
       center: Point,
       angle: number,
@@ -1317,6 +1484,12 @@ declare module opencv {
       M: number,
       flags: WarpPolarMode,
     ): void
+=======
+    getRotationMatrix2D(center: Point, angle: number, scale: number): Mat
+    invertAffineTransform(M: Mat, iM: Mat): void
+    linearPolar(src: Mat, dst: Mat, center: Point, maxRadius: number, flags: WarpPolarMode): void
+    logPolar(src: Mat, dst: Mat, center: Point, M: number, flags: WarpPolarMode): void
+>>>>>>> 162d1a36bbc17b3388b5e3862f93bdaa63728312
     remap(
       src: Mat,
       dst: Mat,
@@ -1326,6 +1499,7 @@ declare module opencv {
       borderMode: number,
       borderValue: Scalar,
     ): void
+<<<<<<< HEAD
     remap(
       src: Mat,
       dst: Mat,
@@ -1356,6 +1530,12 @@ declare module opencv {
       fx: number,
       fy: number,
     ): void
+=======
+    remap(src: Mat, dst: Mat, map1: Mat, map2: Mat, interpolation: number, borderMode: number): void
+    remap(src: Mat, dst: Mat, map1: Mat, map2: Mat, interpolation: number): void
+    resize(src: Mat, dst: Mat, dsize: Size, fx: number, fy: number, interpolation: number): void
+    resize(src: Mat, dst: Mat, dsize: Size, fx: number, fy: number): void
+>>>>>>> 162d1a36bbc17b3388b5e3862f93bdaa63728312
     resize(src: Mat, dst: Mat, dsize: Size): void
     warpAffine(
       src: Mat,
@@ -1374,6 +1554,7 @@ declare module opencv {
       flags: InterpolationFlags,
       borderMode: BorderTypes,
     ): void
+<<<<<<< HEAD
     warpAffine(
       src: Mat,
       dst: Mat,
@@ -1381,6 +1562,9 @@ declare module opencv {
       dsize: Size,
       flags: InterpolationFlags,
     ): void
+=======
+    warpAffine(src: Mat, dst: Mat, M: Mat, dsize: Size, flags: InterpolationFlags): void
+>>>>>>> 162d1a36bbc17b3388b5e3862f93bdaa63728312
     warpAffine(src: Mat, dst: Mat, M: Mat, dsize: Size): void
     warpPerspective(
       src: Mat,
@@ -1399,6 +1583,7 @@ declare module opencv {
       flags: InterpolationFlags,
       borderMode: BorderTypes,
     ): void
+<<<<<<< HEAD
     warpPerspective(
       src: Mat,
       dst: Mat,
@@ -1406,6 +1591,9 @@ declare module opencv {
       dsize: Size,
       flags: InterpolationFlags,
     ): void
+=======
+    warpPerspective(src: Mat, dst: Mat, M: Mat, dsize: Size, flags: InterpolationFlags): void
+>>>>>>> 162d1a36bbc17b3388b5e3862f93bdaa63728312
     warpPerspective(src: Mat, dst: Mat, M: Mat, dsize: Size): void
     warpPolar(
       src: Mat,
@@ -1444,6 +1632,7 @@ declare module opencv {
       thickness: number,
       line_type: LineTypes,
     ): void
+<<<<<<< HEAD
     arrowedLine(
       img: Mat,
       pt1: Point,
@@ -1451,6 +1640,9 @@ declare module opencv {
       color: Scalar,
       thickness: number,
     ): void
+=======
+    arrowedLine(img: Mat, pt1: Point, pt2: Point, color: Scalar, thickness: number): void
+>>>>>>> 162d1a36bbc17b3388b5e3862f93bdaa63728312
     arrowedLine(img: Mat, pt1: Point, pt2: Point, color: Scalar): void
     circle(
       img: Mat,
@@ -1469,6 +1661,7 @@ declare module opencv {
       thickness: number,
       line_type: LineTypes,
     ): void
+<<<<<<< HEAD
     circle(
       img: Mat,
       center: Point,
@@ -1482,6 +1675,10 @@ declare module opencv {
       radius: number,
       color: Scalar,
     ): void
+=======
+    circle(img: Mat, center: Point, radius: number, color: Scalar, thickness: number): void
+    circle(img: Mat, center: Point, radius: number, color: Scalar): void
+>>>>>>> 162d1a36bbc17b3388b5e3862f93bdaa63728312
     clipLine(imgSize: Size, pt1: Point, pt2: Point): boolean
     clipLine(imgRect: Rect, pt1: Point, pt2: Point): boolean
     drawContours(
@@ -1529,12 +1726,16 @@ declare module opencv {
       color: Scalar,
       thickness: number,
     ): void
+<<<<<<< HEAD
     drawContours(
       image: Mat,
       contours: MatVector,
       contourIdx: number,
       color: Scalar,
     ): void
+=======
+    drawContours(image: Mat, contours: MatVector, contourIdx: number, color: Scalar): void
+>>>>>>> 162d1a36bbc17b3388b5e3862f93bdaa63728312
     drawMarker(
       img: Mat,
       position: Point,
@@ -1559,12 +1760,16 @@ declare module opencv {
       markerType: MarkerTypes,
       markerSize: number,
     ): void
+<<<<<<< HEAD
     drawMarker(
       img: Mat,
       position: Point,
       color: Scalar,
       markerType: MarkerTypes,
     ): void
+=======
+    drawMarker(img: Mat, position: Point, color: Scalar, markerType: MarkerTypes): void
+>>>>>>> 162d1a36bbc17b3388b5e3862f93bdaa63728312
     drawMarker(img: Mat, position: Point, color: Scalar): void
     ellipse(
       img: Mat,
@@ -1608,6 +1813,7 @@ declare module opencv {
       endAngle: number,
       color: Scalar,
     ): void
+<<<<<<< HEAD
     ellipse(
       img: Mat,
       box: RotatedRect,
@@ -1621,6 +1827,10 @@ declare module opencv {
       color: Scalar,
       thickness: number,
     ): void
+=======
+    ellipse(img: Mat, box: RotatedRect, color: Scalar, thickness: number, lineType: LineTypes): void
+    ellipse(img: Mat, box: RotatedRect, color: Scalar, thickness: number): void
+>>>>>>> 162d1a36bbc17b3388b5e3862f93bdaa63728312
     ellipse(img: Mat, box: RotatedRect, color: Scalar): void
     ellipse2Poly(
       center: Point,
@@ -1631,6 +1841,7 @@ declare module opencv {
       delta: number,
       pts: NDArray<Point>,
     ): void
+<<<<<<< HEAD
     fillConvexPoly(
       img: Mat,
       pts: Point,
@@ -1644,6 +1855,10 @@ declare module opencv {
       color: Scalar,
       lineType: LineTypes,
     ): void
+=======
+    fillConvexPoly(img: Mat, pts: Point, color: Scalar, lineType: LineTypes, shift: number): void
+    fillConvexPoly(img: Mat, pts: Point, color: Scalar, lineType: LineTypes): void
+>>>>>>> 162d1a36bbc17b3388b5e3862f93bdaa63728312
     fillConvexPoly(img: Mat, pts: Point, color: Scalar): void
     fillPoly(
       img: Mat,
@@ -1653,6 +1868,7 @@ declare module opencv {
       shift: number,
       offset: Point,
     ): void
+<<<<<<< HEAD
     fillPoly(
       img: Mat,
       pts: Point,
@@ -1676,6 +1892,13 @@ declare module opencv {
       fontFace: HersheyFonts,
       pixelHeight: number,
     ): number
+=======
+    fillPoly(img: Mat, pts: Point, color: Scalar, lineType: LineTypes, shift: number): void
+    fillPoly(img: Mat, pts: Point, color: Scalar, lineType: LineTypes): void
+    fillPoly(img: Mat, pts: Point, color: Scalar): void
+    getFontScaleFromHeight(fontFace: HersheyFonts, pixelHeight: number, thickness: number): number
+    getFontScaleFromHeight(fontFace: HersheyFonts, pixelHeight: number): number
+>>>>>>> 162d1a36bbc17b3388b5e3862f93bdaa63728312
     getTextSize(
       text: string,
       fontFace: HersheyFonts,
@@ -1700,6 +1923,7 @@ declare module opencv {
       thickness: number,
       lineType: LineTypes,
     ): void
+<<<<<<< HEAD
     line(
       img: Mat,
       pt1: Point,
@@ -1713,6 +1937,10 @@ declare module opencv {
       pt2: Point,
       color: Scalar | number[],
     ): void
+=======
+    line(img: Mat, pt1: Point, pt2: Point, color: Scalar | number[], thickness: number): void
+    line(img: Mat, pt1: Point, pt2: Point, color: Scalar | number[]): void
+>>>>>>> 162d1a36bbc17b3388b5e3862f93bdaa63728312
     polylines(
       img: Mat,
       pts: NDArray<Point>,
@@ -1737,12 +1965,16 @@ declare module opencv {
       color: Scalar,
       thickness: number,
     ): void
+<<<<<<< HEAD
     polylines(
       img: Mat,
       pts: NDArray<Point>,
       isClosed: boolean,
       color: Scalar,
     ): void
+=======
+    polylines(img: Mat, pts: NDArray<Point>, isClosed: boolean, color: Scalar): void
+>>>>>>> 162d1a36bbc17b3388b5e3862f93bdaa63728312
     putText(
       img: Mat,
       text: string,
@@ -1798,6 +2030,7 @@ declare module opencv {
       thickness: number,
       lineType: LineTypes,
     ): void
+<<<<<<< HEAD
     rectangle(
       img: Mat,
       pt1: Point,
@@ -1811,6 +2044,10 @@ declare module opencv {
       pt2: Point,
       color: Scalar | number[],
     ): void
+=======
+    rectangle(img: Mat, pt1: Point, pt2: Point, color: Scalar | number[], thickness: number): void
+    rectangle(img: Mat, pt1: Point, pt2: Point, color: Scalar | number[]): void
+>>>>>>> 162d1a36bbc17b3388b5e3862f93bdaa63728312
     rectangle(
       img: Mat,
       rec: Rect,
@@ -1819,6 +2056,7 @@ declare module opencv {
       lineType: LineTypes,
       shift: number,
     ): void
+<<<<<<< HEAD
     rectangle(
       img: Mat,
       rec: Rect,
@@ -1857,6 +2095,21 @@ declare module opencv {
       convexHull: Mat,
       convexityDefects: Mat,
     ): void
+=======
+    rectangle(img: Mat, rec: Rect, color: Scalar, thickness: number, lineType: LineTypes): void
+    rectangle(img: Mat, rec: Rect, color: Scalar, thickness: number): void
+    rectangle(img: Mat, rec: Rect, color: Scalar): void
+
+    // Distance Types
+    approxPolyDP(curve: Mat | MatVector, approxCurve: Mat, epsilon: number, bool: boolean): void
+    arcLength(curve: Mat | MatVector, closed: boolean): number
+    boundingRect(array: Mat | MatVector): Rect
+    connectedComponents(image: Mat, labels: Mat): number
+    connectedComponentsWithStats(image: Mat, labels: Mat, stats: Mat, centroids: Mat): number
+    contourArea(contour: Mat | MatVector, oriented?: boolean): number
+    convexHull(points: Mat, hull: Mat): void
+    convexityDefects(contour: Mat, convexHull: Mat, convexityDefects: Mat): void
+>>>>>>> 162d1a36bbc17b3388b5e3862f93bdaa63728312
     findContours(
       image: Mat | MatVector,
       contours: Mat | MatVector,
@@ -1874,6 +2127,7 @@ declare module opencv {
       aeps: number,
     ): void
     isContourConvex(contour: Mat): boolean
+<<<<<<< HEAD
     matchShapes(
       contour1: Mat,
       contour2: Mat,
@@ -1888,6 +2142,13 @@ declare module opencv {
       pt: Point,
       measureDist: boolean,
     ): number
+=======
+    matchShapes(contour1: Mat, contour2: Mat, method: ShapeMatchModes, parameter: number): number
+    minAreaRect(points: Mat): RotatedRect
+    minEnclosingCircle(points: Mat): void
+    moments(array: Mat): Moments
+    pointPolygonTest(contour: Mat, pt: Point, measureDist: boolean): number
+>>>>>>> 162d1a36bbc17b3388b5e3862f93bdaa63728312
     CCL_DEFAULT: ConnectedComponentsAlgorithmsTypes.CCL_DEFAULT
     CCL_WU: ConnectedComponentsAlgorithmsTypes.CCL_WU
     CCL_GRANA: ConnectedComponentsAlgorithmsTypes.CCL_GRANA
@@ -1922,9 +2183,13 @@ declare module opencv {
       dst: Mat,
       maxValue: number,
       adaptiveMethod: AdaptiveThresholdTypes,
+<<<<<<< HEAD
       thresholdType:
         | ThresholdTypes.THRESH_BINARY
         | ThresholdTypes.THRESH_BINARY_INV,
+=======
+      thresholdType: ThresholdTypes.THRESH_BINARY | ThresholdTypes.THRESH_BINARY_INV,
+>>>>>>> 162d1a36bbc17b3388b5e3862f93bdaa63728312
       blockSize: number,
       C: number,
     ): void
@@ -1934,6 +2199,7 @@ declare module opencv {
       distanceType: DistanceTypes,
       maskSize: DistanceTransformMasks,
     ): void
+<<<<<<< HEAD
     floodFill(
       image: Mat,
       seedPoint: Point,
@@ -1948,6 +2214,11 @@ declare module opencv {
       maxval: number,
       type: ThresholdTypes,
     ): void
+=======
+    floodFill(image: Mat, seedPoint: Point, newVal: Scalar, rect: Rect): void
+    integral(src: Mat, sum: Mat): void
+    threshold(src: Mat, dst: Mat, thresh: number, maxval: number, type: ThresholdTypes): void
+>>>>>>> 162d1a36bbc17b3388b5e3862f93bdaa63728312
     ADAPTIVE_THRESH_MEAN_C: AdaptiveThresholdTypes.ADAPTIVE_THRESH_MEAN_C
     ADAPTIVE_THRESH_GAUSSIAN_C: AdaptiveThresholdTypes.ADAPTIVE_THRESH_GAUSSIAN_C
     DIST_LABEL_CCOMP: DistanceTransformLabelTypes.DIST_LABEL_CCOMP
@@ -1975,6 +2246,7 @@ declare module opencv {
     THRESH_TRIANGLE: ThresholdTypes.THRESH_TRIANGLE
 
     // Feature detection
+<<<<<<< HEAD
     Canny(
       image: Mat,
       edges: Mat,
@@ -1995,6 +2267,11 @@ declare module opencv {
       ksize: number,
       k: number,
     ): void
+=======
+    Canny(image: Mat, edges: Mat, threshold1: number, threshold2: number): void
+    Canny1(dx: Mat, dy: Mat, edges: Mat, threshold1: number, threshold2: number): void
+    cornerHarris(src: Mat, dst: Mat, blockSize: number, ksize: number, k: number): void
+>>>>>>> 162d1a36bbc17b3388b5e3862f93bdaa63728312
     cornerMinEigenVal(src: Mat, dst: Mat, blockSize: number): void
     goodFeaturesToTrack(
       image: Mat,
@@ -2013,6 +2290,7 @@ declare module opencv {
       blockSize: number,
       gradientSize?: number | 3,
     ): void
+<<<<<<< HEAD
     HoughCircles(
       image: Mat,
       circles: Mat,
@@ -2034,6 +2312,11 @@ declare module opencv {
       theta: number,
       threshold: number,
     ): void
+=======
+    HoughCircles(image: Mat, circles: Mat, method: HoughModes, dp: number, minDist: number): void
+    HoughLines(image: Mat, lines: Mat, rho: number, theta: number, threshold: number): void
+    HoughLinesP(image: Mat, lines: Mat, rho: number, theta: number, threshold: number): void
+>>>>>>> 162d1a36bbc17b3388b5e3862f93bdaa63728312
     LSD_REFINE_NONE: LineSegmentDetectorModes.LSD_REFINE_NONE
     LSD_REFINE_STD: LineSegmentDetectorModes.LSD_REFINE_STD
     LSD_REFINE_ADV: LineSegmentDetectorModes.LSD_REFINE_ADV
@@ -2044,6 +2327,7 @@ declare module opencv {
     HOUGH_GRADIENT_ALT: HoughModes.HOUGH_GRADIENT_ALT
 
     // Object Detection
+<<<<<<< HEAD
     matchTemplate(
       image: Mat,
       templ: Mat,
@@ -2056,6 +2340,10 @@ declare module opencv {
       weights: MatVector,
       groupThreshold: number,
     ): void
+=======
+    matchTemplate(image: Mat, templ: Mat, result: Mat, method: TemplateMatchModes, mask: Mat): void
+    groupRectangles(rectList: NDArray<Rect>, weights: MatVector, groupThreshold: number): void
+>>>>>>> 162d1a36bbc17b3388b5e3862f93bdaa63728312
     TM_SQDIFF: TemplateMatchModes.TM_SQDIFF
     TM_SQDIFF_NORMED: TemplateMatchModes.TM_SQDIFF_NORMED
     TM_CCORR: TemplateMatchModes.TM_CCORR
@@ -2099,11 +2387,15 @@ declare module opencv {
       maxLevel: number,
       criteria: TermCriteria,
     ): void
+<<<<<<< HEAD
     CamShift(
       probImage: Mat,
       window: Rect,
       criteria: TermCriteria,
     ): [RotatedRect, Rect]
+=======
+    CamShift(probImage: Mat, window: Rect, criteria: TermCriteria): [RotatedRect, Rect]
+>>>>>>> 162d1a36bbc17b3388b5e3862f93bdaa63728312
     findTransformECC(
       templateImage: Mat,
       inputImage: Mat,

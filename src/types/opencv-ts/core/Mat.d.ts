@@ -148,6 +148,7 @@ declare module Mat {
      * @param alpha optional scale factor.
      * @param beta optional delta added to the scaled values.
      */
+<<<<<<< HEAD
     convertTo(
       m: Mat,
       rtype: DataTypes,
@@ -166,6 +167,11 @@ declare module Mat {
       alpha: number,
       beta: number,
     ): void
+=======
+    convertTo(m: Mat, rtype: DataTypes, alpha?: number, beta?: number): void
+    convertTo(m: Mat, rtype: DataTypes, alpha: number, beta?: number): void
+    convertTo(m: Mat, rtype: DataTypes, alpha: number, beta: number): void
+>>>>>>> 162d1a36bbc17b3388b5e3862f93bdaa63728312
     /**
      * The method returns the number of array elements (a number of pixels if the array represents an image).
      * @returns the total number of array elements.

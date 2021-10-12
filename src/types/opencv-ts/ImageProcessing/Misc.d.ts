@@ -134,9 +134,13 @@ declare module Misc {
       dst: Mat,
       maxValue: number,
       adaptiveMethod: AdaptiveThresholdTypes,
+<<<<<<< HEAD
       thresholdType:
         | ThresholdTypes.THRESH_BINARY
         | ThresholdTypes.THRESH_BINARY_INV,
+=======
+      thresholdType: ThresholdTypes.THRESH_BINARY | ThresholdTypes.THRESH_BINARY_INV,
+>>>>>>> 162d1a36bbc17b3388b5e3862f93bdaa63728312
       blockSize: number,
       C: number,
     ): void
@@ -160,12 +164,16 @@ declare module Misc {
      * @param newVal New value of the repainted domain pixels
      * @param rect Optional output parameter set by the function to the minimum bounding rectangle of the repainted domain
      */
+<<<<<<< HEAD
     floodFill(
       image: Mat,
       seedPoint: Point,
       newVal: Scalar,
       rect: Rect,
     ): void
+=======
+    floodFill(image: Mat, seedPoint: Point, newVal: Scalar, rect: Rect): void
+>>>>>>> 162d1a36bbc17b3388b5e3862f93bdaa63728312
     /**
      * Calculates the integral of an image
      * @param src input image as W×H, 8-bit or floating-point (32f or 64f).
@@ -180,6 +188,7 @@ declare module Misc {
      * @param maxval maximum value to use with the THRESH_BINARY and THRESH_BINARY_INV thresholding types
      * @param type thresholding type (@see ThresholdTypes).
      */
+<<<<<<< HEAD
     threshold(
       src: Mat,
       dst: Mat,
@@ -187,6 +196,9 @@ declare module Misc {
       maxval: number,
       type: number,
     ): void
+=======
+    threshold(src: Mat, dst: Mat, thresh: number, maxval: number, type: number): void
+>>>>>>> 162d1a36bbc17b3388b5e3862f93bdaa63728312
   }
 }
 export = Misc

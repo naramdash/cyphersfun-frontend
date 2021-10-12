@@ -106,12 +106,16 @@ declare module StructuralAnalysisShapeDescriptors {
      * @param epsilonParameter specifying the approximation accuracy. This is the maximum distance between the original curve and its approximation
      * @param boolIf true, the approximated curve is closed (its first and last vertices are connected). Otherwise, it is not closed
      */
+<<<<<<< HEAD
     approxPolyDP(
       curve: Mat | MatVector,
       approxCurve: Mat,
       epsilon: number,
       bool: boolean,
     ): void
+=======
+    approxPolyDP(curve: Mat | MatVector, approxCurve: Mat, epsilon: number, bool: boolean): void
+>>>>>>> 162d1a36bbc17b3388b5e3862f93bdaa63728312
     /**
      * Calculates a contour perimeter or a curve length.
      * @param curve Input vector of 2D points, stored in std::vector or Mat.
@@ -140,12 +144,16 @@ declare module StructuralAnalysisShapeDescriptors {
      * @param centroids centroid output for each label, including the background label. Centroids are accessed via centroids(label, 0) for x and centroids(label, 1) for y. The data type CV_64F
      * @returns N, the total number of labels [0, N-1] where 0 represents the background label
      */
+<<<<<<< HEAD
     connectedComponentsWithStats(
       image: Mat,
       labels: Mat,
       stats: Mat,
       centroids: Mat,
     ): number
+=======
+    connectedComponentsWithStats(image: Mat, labels: Mat, stats: Mat, centroids: Mat): number
+>>>>>>> 162d1a36bbc17b3388b5e3862f93bdaa63728312
     /**
      * Calculates a contour area
      * @param contour Input vector of 2D points (contour vertices), stored in std::vector or Mat.
@@ -165,11 +173,15 @@ declare module StructuralAnalysisShapeDescriptors {
      * @param convexHull Convex hull obtained using convexHull that should contain indices of the contour points that make the hull
      * @param convexityDefects  output vector of convexity defects. In C++ and the new Python/Java interface each convexity defect is represented as 4-element integer vector (a.k.a. Vec4i): (start_index, end_index, farthest_pt_index, fixpt_depth), where indices are 0-based indices in the original contour of the convexity defect beginning, end and the farthest point, and fixpt_depth is fixed-point approximation (with 8 fractional bits) of the distance between the farthest contour point and the hull. That is, to get the floating-point value of the depth will be fixpt_depth/256.0.
      */
+<<<<<<< HEAD
     convexityDefects(
       contour: Mat,
       convexHull: Mat,
       convexityDefects: Mat,
     ): void
+=======
+    convexityDefects(contour: Mat, convexHull: Mat, convexityDefects: Mat): void
+>>>>>>> 162d1a36bbc17b3388b5e3862f93bdaa63728312
     /**
      * Finds contours in a binary image
      * @param image Source, an 8-bit single-channel image. Non-zero pixels are treated as 1's. Zero pixels remain 0's, so the image is treated as binary . You can use compare, inRange, threshold , adaptiveThreshold, Canny, and others to create a binary image out of a grayscale or color one. If mode equals to RETR_CCOMP or RETR_FLOODFILL, the input can also be a 32-bit integer image of labels (CV_32SC1).
@@ -221,12 +233,16 @@ declare module StructuralAnalysisShapeDescriptors {
      * @param parameter Method-specific parameter (not supported now).
      * @returns
      */
+<<<<<<< HEAD
     matchShapes(
       contour1: Mat,
       contour2: Mat,
       method: ShapeMatchModes,
       parameter: number,
     ): number
+=======
+    matchShapes(contour1: Mat, contour2: Mat, method: ShapeMatchModes, parameter: number): number
+>>>>>>> 162d1a36bbc17b3388b5e3862f93bdaa63728312
     /**
      * Finds a rotated rectangle of the minimum area enclosing the input 2D point set.
      * @param points Input vector of 2D points, stored in a Mat
@@ -251,11 +267,15 @@ declare module StructuralAnalysisShapeDescriptors {
      * @param measureDist If true, the function estimates the signed distance from the point to the nearest contour edge. Otherwise, the function only checks if the point is inside a contour or not.
      * @returns positive (inside), negative (outside), or zero (on an edge) value, correspondingly.
      */
+<<<<<<< HEAD
     pointPolygonTest(
       contour: Mat,
       pt: Point,
       measureDist: boolean,
     ): number
+=======
+    pointPolygonTest(contour: Mat, pt: Point, measureDist: boolean): number
+>>>>>>> 162d1a36bbc17b3388b5e3862f93bdaa63728312
   }
 }
 

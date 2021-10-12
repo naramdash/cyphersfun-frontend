@@ -38,12 +38,16 @@ declare module FeatureDetection {
      * @param threshold2 second threshold for the hysteresis procedure
      * @param apertureSize aperture size for the Sobel operator
      */
+<<<<<<< HEAD
     Canny(
       image: Mat,
       edges: Mat,
       threshold1: number,
       threshold2: number,
     ): void
+=======
+    Canny(image: Mat, edges: Mat, threshold1: number, threshold2: number): void
+>>>>>>> 162d1a36bbc17b3388b5e3862f93bdaa63728312
     /**
      * Finds edges in an image using the Canny algorithm
      * @param dx 16-bit x derivative of input image (CV_16SC1 or CV_16SC3).
@@ -52,6 +56,7 @@ declare module FeatureDetection {
      * @param threshold1 first threshold for the hysteresis procedure
      * @param threshold2 second threshold for the hysteresis procedure
      */
+<<<<<<< HEAD
     Canny1(
       dx: Mat,
       dy: Mat,
@@ -59,6 +64,9 @@ declare module FeatureDetection {
       threshold1: number,
       threshold2: number,
     ): void
+=======
+    Canny1(dx: Mat, dy: Mat, edges: Mat, threshold1: number, threshold2: number): void
+>>>>>>> 162d1a36bbc17b3388b5e3862f93bdaa63728312
     /**
      * Harris corner detector
      * @param src Input single-channel 8-bit or floating-point image.
@@ -67,6 +75,7 @@ declare module FeatureDetection {
      * @param ksize Aperture parameter for the Sobel operator
      * @param k Harris detector free parameter. See the formula above
      */
+<<<<<<< HEAD
     cornerHarris(
       src: Mat,
       dst: Mat,
@@ -74,6 +83,9 @@ declare module FeatureDetection {
       ksize: number,
       k: number,
     ): void
+=======
+    cornerHarris(src: Mat, dst: Mat, blockSize: number, ksize: number, k: number): void
+>>>>>>> 162d1a36bbc17b3388b5e3862f93bdaa63728312
     /**
      * Calculates the minimal eigenvalue of gradient matrices for corner detection
      * @param src Input single-channel 8-bit or floating-point image
@@ -125,6 +137,7 @@ declare module FeatureDetection {
      * @param dp Inverse ratio of the accumulator resolution to the image resolution. For example, if dp=1 , the accumulator has the same resolution as the input image. If dp=2 , the accumulator has half as big width and height. For HOUGH_GRADIENT_ALT the recommended value is dp=1.5, unless some small very circles need to be detected
      * @param minDist Minimum distance between the centers of the detected circles. If the parameter is too small, multiple neighbor circles may be falsely detected in addition to a true one. If it is too large, some circles may be missed
      */
+<<<<<<< HEAD
     HoughCircles(
       image: Mat,
       circles: Mat,
@@ -132,6 +145,9 @@ declare module FeatureDetection {
       dp: number,
       minDist: number,
     ): void
+=======
+    HoughCircles(image: Mat, circles: Mat, method: HoughModes, dp: number, minDist: number): void
+>>>>>>> 162d1a36bbc17b3388b5e3862f93bdaa63728312
     /**
      * Finds lines in a binary image using the standard Hough transform
      * @param image 8-bit, single-channel binary source image. The image may be modified by the function.
@@ -140,6 +156,7 @@ declare module FeatureDetection {
      * @param theta Angle resolution of the accumulator in radians
      * @param threshold Accumulator threshold parameter. Only those lines are returned that get enough votes ( >𝚝𝚑𝚛𝚎𝚜𝚑𝚘𝚕𝚍 ).
      */
+<<<<<<< HEAD
     HoughLines(
       image: Mat,
       lines: Mat,
@@ -147,6 +164,9 @@ declare module FeatureDetection {
       theta: number,
       threshold: number,
     ): void
+=======
+    HoughLines(image: Mat, lines: Mat, rho: number, theta: number, threshold: number): void
+>>>>>>> 162d1a36bbc17b3388b5e3862f93bdaa63728312
     /**
      * Finds line segments in a binary image using the probabilistic Hough transform
      * @param image 8-bit, single-channel binary source image. The image may be modified by the function.
@@ -155,6 +175,7 @@ declare module FeatureDetection {
      * @param theta Angle resolution of the accumulator in radians
      * @param threshold Accumulator threshold parameter. Only those lines are returned that get enough votes ( >𝚝𝚑𝚛𝚎𝚜𝚑𝚘𝚕𝚍 ).
      */
+<<<<<<< HEAD
     HoughLinesP(
       image: Mat,
       lines: Mat,
@@ -162,6 +183,9 @@ declare module FeatureDetection {
       theta: number,
       threshold: number,
     ): void
+=======
+    HoughLinesP(image: Mat, lines: Mat, rho: number, theta: number, threshold: number): void
+>>>>>>> 162d1a36bbc17b3388b5e3862f93bdaa63728312
   }
 }
 

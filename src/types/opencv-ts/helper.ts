@@ -51,6 +51,10 @@ for (var i = 0; i <= fnStr.length; i += 2) {
   }
 }
 
+<<<<<<< HEAD
 console.log(
   `${formattedFnStr.substring(0, formattedFnStr.length - 1)}):`,
 )
+=======
+console.log(`${formattedFnStr.substring(0, formattedFnStr.length - 1)}):`)
+>>>>>>> 162d1a36bbc17b3388b5e3862f93bdaa63728312

@@ -166,6 +166,7 @@ declare module CoreArray {
      * @param dtype optional depth of the output array.
      */
     add(src1: Mat, src2: Mat, dst: Mat, mask?: Mat): void
+<<<<<<< HEAD
     add(
       src1: Mat,
       src2: Mat,
@@ -173,6 +174,9 @@ declare module CoreArray {
       mask: Mat,
       dtype: number | DataTypes,
     ): void
+=======
+    add(src1: Mat, src2: Mat, dst: Mat, mask: Mat, dtype: number | DataTypes): void
+>>>>>>> 162d1a36bbc17b3388b5e3862f93bdaa63728312
     /**
      *
      * @param src1 first input array.
@@ -245,11 +249,15 @@ declare module CoreArray {
      * @param len Length of the array along the corresponding axis.
      * @param borderType Border type, one of the BorderTypes, except for BORDER_TRANSPARENT and BORDER_ISOLATED . When borderType==BORDER_CONSTANT , the function always returns -1, regardless of p and len
      */
+<<<<<<< HEAD
     borderInterpolate(
       p: number,
       len: number,
       borderType: BorderTypes,
     ): number
+=======
+    borderInterpolate(p: number, len: number, borderType: BorderTypes): number
+>>>>>>> 162d1a36bbc17b3388b5e3862f93bdaa63728312
     /**
      * Calculates the covariance matrix of a set of vectors.
      * @param samples samples stored as separate matrices
@@ -267,6 +275,7 @@ declare module CoreArray {
       flags: CovarFlags,
       ctype: DataTypes,
     ): void
+<<<<<<< HEAD
     calcCovarMatrix(
       samples: Mat,
       covar: Mat,
@@ -274,6 +283,9 @@ declare module CoreArray {
       flags: CovarFlags,
       ctype: DataTypes,
     ): void
+=======
+    calcCovarMatrix(samples: Mat, covar: Mat, mean: Mat, flags: CovarFlags, ctype: DataTypes): void
+>>>>>>> 162d1a36bbc17b3388b5e3862f93bdaa63728312
     /**
      * Calculates the magnitude and angle of 2D vectors.
      * @param x array of x-coordinates; this must be a single-precision or double-precision floating-point array
@@ -297,6 +309,7 @@ declare module CoreArray {
      * @param minVal inclusive lower boundary of valid values range.
      * @param maxVal exclusive upper boundary of valid values range.
      */
+<<<<<<< HEAD
     checkRange(
       a: MatVector | Mat,
       quiet: boolean,
@@ -304,6 +317,9 @@ declare module CoreArray {
       minVal: number,
       maxVal: number,
     ): void
+=======
+    checkRange(a: MatVector | Mat, quiet: boolean, pos: Point, minVal: number, maxVal: number): void
+>>>>>>> 162d1a36bbc17b3388b5e3862f93bdaa63728312
     /**
      * Performs the per-element comparison of two arrays or an array and scalar value
      * @param src1 first input array or a scalar; when it is an array, it must have a single channel
@@ -332,6 +348,7 @@ declare module CoreArray {
      * @param beta optional delta added to the scaled values
      */
     convertScaleAbs(src: Mat, dst: Mat, alpha?: number): void
+<<<<<<< HEAD
     convertScaleAbs(
       src: Mat,
       dst: Mat,
@@ -344,6 +361,10 @@ declare module CoreArray {
       alpha: number,
       beta: number,
     ): void
+=======
+    convertScaleAbs(src: Mat, dst: Mat, alpha: number, beta?: number): void
+    convertScaleAbs(src: Mat, dst: Mat, alpha: number, beta: number): void
+>>>>>>> 162d1a36bbc17b3388b5e3862f93bdaa63728312
     /**
      * Forms a border around an image.
      * @param src Source image
@@ -401,12 +422,16 @@ declare module CoreArray {
      * contain non-zeros, thus, the function can handle the rest of the rows more efficiently and save some time; this
      * technique is very useful for calculating array cross-correlation or convolution using DFT.
      */
+<<<<<<< HEAD
     dft(
       src: Mat,
       dst: Mat,
       flags: DftFlags,
       nonzeroRows: number,
     ): void
+=======
+    dft(src: Mat, dst: Mat, flags: DftFlags, nonzeroRows: number): void
+>>>>>>> 162d1a36bbc17b3388b5e3862f93bdaa63728312
     /**
      *
      * @param src1 first input array.
@@ -415,6 +440,7 @@ declare module CoreArray {
      * @param scale scalar factor
      * @param dtype optional depth of the output array; if -1, dst will have depth src2.depth(), but in case of an array-by-array division, you can only pass -1 when src1.depth()==src2.depth().
      */
+<<<<<<< HEAD
     divide(
       src1: Mat,
       src2: Mat,
@@ -422,6 +448,9 @@ declare module CoreArray {
       scale: number,
       dtype?: number,
     ): void
+=======
+    divide(src1: Mat, src2: Mat, dst: Mat, scale: number, dtype?: number): void
+>>>>>>> 162d1a36bbc17b3388b5e3862f93bdaa63728312
     divide(scale: number, src2: Mat, dst: Mat, dtype?: number): void
     /**
      * Calculates eigenvalues and eigenvectors of a symmetric matrix
@@ -436,11 +465,15 @@ declare module CoreArray {
      * @param eigenvalues output vector of eigenvalues (type is the same type as src)
      * @param eigenvectors output matrix of eigenvectors (type is the same type as src). The eigenvectors are stored as subsequent matrix rows, in the same order as the corresponding eigenvalues
      */
+<<<<<<< HEAD
     eigenNonSymmetric(
       src: Mat,
       eigenvalues: Mat,
       eigenvectors: Mat,
     ): void
+=======
+    eigenNonSymmetric(src: Mat, eigenvalues: Mat, eigenvectors: Mat): void
+>>>>>>> 162d1a36bbc17b3388b5e3862f93bdaa63728312
     /**
      * Calculates the exponent of every array element.
      * @param src input array
@@ -520,12 +553,16 @@ declare module CoreArray {
      * @param flags operation flags (see dft and DftFlags).
      * @param nonzeroRows number of dst rows to process
      */
+<<<<<<< HEAD
     idft(
       src: Mat,
       dst: Mat,
       flags: DftFlags,
       nonzeroRows: number,
     ): void
+=======
+    idft(src: Mat, dst: Mat, flags: DftFlags, nonzeroRows: number): void
+>>>>>>> 162d1a36bbc17b3388b5e3862f93bdaa63728312
     /**
      * Checks if array elements lie between the elements of two other arrays.
      * @param src first input array
@@ -533,12 +570,16 @@ declare module CoreArray {
      * @param upperb inclusive upper boundary array or a scalar
      * @param dst output array of the same size as src and CV_8U type
      */
+<<<<<<< HEAD
     inRange(
       src: Mat,
       lowerb: MatVector | Mat,
       upperb: MatVector | Mat,
       dst: Mat,
     ): void
+=======
+    inRange(src: Mat, lowerb: MatVector | Mat, upperb: MatVector | Mat, dst: Mat): void
+>>>>>>> 162d1a36bbc17b3388b5e3862f93bdaa63728312
     /**
      * Inserts a single channel to dst (coi is 0-based index)
      * @param src input array
@@ -572,22 +613,30 @@ declare module CoreArray {
      * @param y floating-point array of y-coordinates of the vectors; it must have the same size as x.
      * @param magnitude output array of the same size and type as x
      */
+<<<<<<< HEAD
     magnitude(
       x: MatVector | Mat,
       y: MatVector | Mat,
       magnitude: Mat,
     ): void
+=======
+    magnitude(x: MatVector | Mat, y: MatVector | Mat, magnitude: Mat): void
+>>>>>>> 162d1a36bbc17b3388b5e3862f93bdaa63728312
     /**
      * Calculates the Mahalanobis distance between two vectors
      * @param v1 first 1D input vector
      * @param v2 second 1D input vector
      * @param icovar inverse covariance matrix
      */
+<<<<<<< HEAD
     Mahalanobis(
       v1: MatVector | Mat,
       v2: MatVector | Mat,
       icovar: Mat,
     ): void
+=======
+    Mahalanobis(v1: MatVector | Mat, v2: MatVector | Mat, icovar: Mat): void
+>>>>>>> 162d1a36bbc17b3388b5e3862f93bdaa63728312
     /**
      * Calculates per-element maximum of two arrays or an array and a scalar
      * @param src1 first input array
@@ -655,12 +704,16 @@ declare module CoreArray {
     minMaxLoc(
       src: Mat,
       mask?: Mat,
+<<<<<<< HEAD
     ): {
       minVal: number
       maxVal: number
       minLoc: Point
       maxLoc: Point
     }
+=======
+    ): { minVal: number; maxVal: number; minLoc: Point; maxLoc: Point }
+>>>>>>> 162d1a36bbc17b3388b5e3862f93bdaa63728312
     /**
      * Copies specified channels from input arrays to the specified channels of output arrays
      * @param src input array or vector of matrices; all of the matrices must have the same size and the same depth
@@ -678,6 +731,7 @@ declare module CoreArray {
       fromTo: number,
       npairs: number,
     ): void
+<<<<<<< HEAD
     mixChannels(
       src: Mat,
       dst: Mat,
@@ -689,6 +743,10 @@ declare module CoreArray {
       dst: Mat | MatVector,
       fromTo: MatVector,
     ): void
+=======
+    mixChannels(src: Mat, dst: Mat, fromTo: number, npairs: number): void
+    mixChannels(src: Mat | MatVector, dst: Mat | MatVector, fromTo: MatVector): void
+>>>>>>> 162d1a36bbc17b3388b5e3862f93bdaa63728312
     /**
      * Performs the per-element multiplication of two Fourier spectrums
      * @param a first input array
@@ -697,6 +755,7 @@ declare module CoreArray {
      * @param flags operation flags; currently, the only supported flag is cv.DFT_ROWS, which indicates that each row of src1 and src2 is an independent 1D Fourier spectrum. If you do not want to use this flag, then simply add a 0 as value.
      * @param conjB optional flag that conjugates the second input array before the multiplication (true) or not (false).
      */
+<<<<<<< HEAD
     mulSpectrums(
       a: Mat,
       b: Mat,
@@ -704,6 +763,9 @@ declare module CoreArray {
       flags: DftFlags,
       conjB?: boolean,
     ): void
+=======
+    mulSpectrums(a: Mat, b: Mat, c: Mat, flags: DftFlags, conjB?: boolean): void
+>>>>>>> 162d1a36bbc17b3388b5e3862f93bdaa63728312
     /**
      * Calculates the per-element scaled product of two arrays
      * @param src1 first input array
@@ -712,6 +774,7 @@ declare module CoreArray {
      * @param scale optional scale factor
      * @param dtype optional depth of the output array
      */
+<<<<<<< HEAD
     multiply(
       src1: Mat,
       src2: Mat,
@@ -719,6 +782,9 @@ declare module CoreArray {
       scale: number,
       dtype?: DataTypes,
     ): void
+=======
+    multiply(src1: Mat, src2: Mat, dst: Mat, scale: number, dtype?: DataTypes): void
+>>>>>>> 162d1a36bbc17b3388b5e3862f93bdaa63728312
     /**
      * Calculates the product of a matrix and its transposition
      * @param src input single-channel matrix. Note that unlike gemm, the function can multiply not only floating-point matrices
@@ -752,12 +818,16 @@ declare module CoreArray {
      * @param mask optional operation mask; it must have the same size as src1 and CV_8UC1 type.
      * @returns the absolute norm of an array
      */
+<<<<<<< HEAD
     norm(
       src1: Mat,
       src2: Mat,
       normType: NormTypes,
       mask?: Mat,
     ): number
+=======
+    norm(src1: Mat, src2: Mat, normType: NormTypes, mask?: Mat): number
+>>>>>>> 162d1a36bbc17b3388b5e3862f93bdaa63728312
     /**
      * Calculates the absolute norm of an array
      * @param src first input array.
@@ -798,12 +868,16 @@ declare module CoreArray {
      * @param alpha norm value to normalize to or the lower range boundary in case of the range normalization
      * @param normType normalization type (see cv::NormTypes).
      */
+<<<<<<< HEAD
     normalize(
       src: Mat,
       dst: Mat,
       alpha: number,
       normType: NormTypes,
     ): void
+=======
+    normalize(src: Mat, dst: Mat, alpha: number, normType: NormTypes): void
+>>>>>>> 162d1a36bbc17b3388b5e3862f93bdaa63728312
     /**
      * converts NaNs to the given number
      * @param a input/output matrix (CV_32F type).
@@ -837,12 +911,16 @@ declare module CoreArray {
      * @param angle output array of vector angles; it has the same size and same type as x
      * @param angleInDegrees when true, the function calculates the angle in degrees, otherwise, they are measured in radians
      */
+<<<<<<< HEAD
     phase(
       x: MatVector | Mat,
       y: MatVector | Mat,
       angle: Mat,
       angleInDegrees: boolean,
     ): void
+=======
+    phase(x: MatVector | Mat, y: MatVector | Mat, angle: Mat, angleInDegrees: boolean): void
+>>>>>>> 162d1a36bbc17b3388b5e3862f93bdaa63728312
     /**
      * Calculates x and y coordinates of 2D vectors from their magnitude and angle
      * @param magnitude input floating-point array of magnitudes of 2D vectors; it can be an empty matrix (=Mat()), in this case, the function assumes that all the magnitudes are =1; if it is not empty, it must have the same size and type as angle
@@ -879,11 +957,15 @@ declare module CoreArray {
      * @param mean mean value (expectation) of the generated random numbers
      * @param stddev standard deviation of the generated random numbers; it can be either a vector (in which case a diagonal standard deviation matrix is assumed) or a square matrix.
      */
+<<<<<<< HEAD
     randn(
       dst: Mat,
       mean: MatVector | Mat,
       stddev: MatVector | Mat,
     ): void
+=======
+    randn(dst: Mat, mean: MatVector | Mat, stddev: MatVector | Mat): void
+>>>>>>> 162d1a36bbc17b3388b5e3862f93bdaa63728312
     /**
      * Shuffles the array elements randomly
      * @param dst input/output numerical 1D array
@@ -906,6 +988,7 @@ declare module CoreArray {
      * @param rtype reduction operation that could be one of ReduceTypes
      * @param dtype when negative, the output vector will have the same type as the input matrix, otherwise, its type will be CV_MAKE_TYPE(CV_MAT_DEPTH(dtype), src.channels())
      */
+<<<<<<< HEAD
     reduce(
       src: Mat,
       dst: Mat,
@@ -913,6 +996,9 @@ declare module CoreArray {
       rtype: ReduceTypes,
       dtype: number | DataTypes,
     ): void
+=======
+    reduce(src: Mat, dst: Mat, dim: number, rtype: ReduceTypes, dtype: number | DataTypes): void
+>>>>>>> 162d1a36bbc17b3388b5e3862f93bdaa63728312
     /**
      * Fills the output array with repeated copies of the input array
      * @param src input array to replicate
@@ -1002,6 +1088,7 @@ declare module CoreArray {
      * @param mask optional operation mask; this is an 8-bit single channel array that specifies elements of the output array to be changed
      * @param dtype optional depth of the output array
      */
+<<<<<<< HEAD
     subtract(
       src1: Mat,
       src2: Mat,
@@ -1009,6 +1096,9 @@ declare module CoreArray {
       mask: Mat,
       dtype: number | DataTypes,
     ): void
+=======
+    subtract(src1: Mat, src2: Mat, dst: Mat, mask: Mat, dtype: number | DataTypes): void
+>>>>>>> 162d1a36bbc17b3388b5e3862f93bdaa63728312
     subtract(src1: Mat, src2: Mat, dst: Mat, mask: Mat): void
     subtract(src1: Mat, src2: Mat, dst: Mat): void
     /**

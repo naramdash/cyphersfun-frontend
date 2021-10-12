@@ -74,6 +74,7 @@ declare module ImageFiltering {
      * @param anchor anchor point; default value Point(-1,-1) means that the anchor is at the kernel center.
      * @param borderType border mode used to extrapolate pixels outside of the image, see BorderTypes. BORDER_WRAP is not supported.
      */
+<<<<<<< HEAD
     blur(
       src: Mat,
       dst: Mat,
@@ -81,6 +82,9 @@ declare module ImageFiltering {
       anchor: Point,
       borderType: BorderTypes,
     ): void
+=======
+    blur(src: Mat, dst: Mat, ksize: Size, anchor: Point, borderType: BorderTypes): void
+>>>>>>> 162d1a36bbc17b3388b5e3862f93bdaa63728312
     /**
      * Blurs an image using the box filter.
      * @param src input image.
@@ -107,12 +111,16 @@ declare module ImageFiltering {
      * @param maxlevel 0-based index of the last (the smallest) pyramid layer. It must be non-negative.
      * @param borderType Pixel extrapolation method, see BorderTypes (BORDER_CONSTANT isn't supported)
      */
+<<<<<<< HEAD
     buildPyramid(
       src: Mat,
       dst: Mat,
       maxlevel: number,
       borderType: BorderTypes,
     ): void
+=======
+    buildPyramid(src: Mat, dst: Mat, maxlevel: number, borderType: BorderTypes): void
+>>>>>>> 162d1a36bbc17b3388b5e3862f93bdaa63728312
     /**
      * Dilates an image by using a specific structuring element.
      * @param src input image; the number of channels can be arbitrary, but the depth should be one of CV_8U, CV_16U, CV_16S, CV_32F or CV_64F
@@ -231,22 +239,30 @@ declare module ImageFiltering {
      * @param sigma Gaussian standard deviation. If it is non-positive, it is computed from ksize as sigma = 0.3*((ksize-1)*0.5 - 1) + 0.8.
      * @param ktype Type of filter coefficients. It can be CV_32F or CV_64F .
      */
+<<<<<<< HEAD
     getGaussianKernel(
       ksize: number,
       sigma: number,
       ktype: DataTypes.CV_32F | DataTypes.CV_64F,
     ): Mat
+=======
+    getGaussianKernel(ksize: number, sigma: number, ktype: DataTypes.CV_32F | DataTypes.CV_64F): Mat
+>>>>>>> 162d1a36bbc17b3388b5e3862f93bdaa63728312
     /**
      * Returns a structuring element of the specified size and shape for morphological operations.
      * @param shape Element shape that could be one of MorphShapes
      * @param ksize Size of the structuring element.
      * @param anchor Anchor position within the element. The default value (−1,−1) means that the anchor is at the center. Note that only the shape of a cross-shaped element depends on the anchor position. In other cases the anchor just regulates how much the result of the morphological operation is shifted.
      */
+<<<<<<< HEAD
     getStructuringElement(
       shape: MorphShapes,
       ksize: Size,
       anchor: Point,
     ): Mat
+=======
+    getStructuringElement(shape: MorphShapes, ksize: Size, anchor: Point): Mat
+>>>>>>> 162d1a36bbc17b3388b5e3862f93bdaa63728312
     /**
      * Calculates the Laplacian of an image.
      * @param src Source image.
@@ -308,12 +324,16 @@ declare module ImageFiltering {
      * @param dstsize size of the output image.
      * @param borderType Pixel extrapolation method, see BorderTypes (BORDER_CONSTANT isn't supported)
      */
+<<<<<<< HEAD
     pyrDown(
       src: Mat,
       dst: Mat,
       dstsize: Size,
       borderType: BorderTypes,
     ): void
+=======
+    pyrDown(src: Mat, dst: Mat, dstsize: Size, borderType: BorderTypes): void
+>>>>>>> 162d1a36bbc17b3388b5e3862f93bdaa63728312
     /**
      * Performs initial step of meanshift segmentation of an image.
      * @param src The source 8-bit, 3-channel image.
@@ -338,12 +358,16 @@ declare module ImageFiltering {
      * @param dstsize size of the output image
      * @param borderType Pixel extrapolation method, see BorderTypes (only BORDER_DEFAULT is supported)
      */
+<<<<<<< HEAD
     pyrUp(
       src: Mat,
       dst: Mat,
       dstsize: Size,
       borderType: BorderTypes,
     ): void
+=======
+    pyrUp(src: Mat, dst: Mat, dstsize: Size, borderType: BorderTypes): void
+>>>>>>> 162d1a36bbc17b3388b5e3862f93bdaa63728312
     /**
      * Calculates the first x- or y- image derivative using Scharr operator.
      * @param src input image.

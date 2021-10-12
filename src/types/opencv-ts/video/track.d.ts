@@ -89,11 +89,15 @@ declare module ObjectTracking {
      * @param criteria Stop criteria for the underlying meanShift. returns (in old interfaces) Number of iterations CAMSHIFT took to converge The function implements the CAMSHIFT object tracking algorithm [33] . First, it finds an object center using meanShift and then adjusts the window size and finds the optimal rotation. The function returns the rotated rectangle structure that includes the object position, size, and orientation. The next position of the search window can be obtained with RotatedRect::boundingRect()
      * @returns returns the rotated rectangle structure that includes the object position, size, and orientation.
      */
+<<<<<<< HEAD
     CamShift(
       probImage: Mat,
       window: Rect,
       criteria: TermCriteria,
     ): [RotatedRect, Rect]
+=======
+    CamShift(probImage: Mat, window: Rect, criteria: TermCriteria): [RotatedRect, Rect]
+>>>>>>> 162d1a36bbc17b3388b5e3862f93bdaa63728312
     /**
      * Finds the geometric transform (warp) between two images in terms of the ECC criterion
      * @param templateImage single-channel template image; CV_8U or CV_32F array.
@@ -114,11 +118,15 @@ declare module ObjectTracking {
      * @param window Initial search window
      * @param criteria Stop criteria for the iterative search algorithm. returns : Number of iterations CAMSHIFT took to converge. The function implements the iterative object search algorithm. It takes the input back projection of an object and the initial position. The mass center in window of the back projection image is computed and the search window center shifts to the mass center. The procedure is repeated until the specified number of iterations criteria.maxCount is done or until the window center shifts by less than criteria.epsilon. The algorithm is used inside CamShift and, unlike CamShift , the search window size or orientation do not change during the search. You can simply pass the output of calcBackProject to this function. But better results can be obtained if you pre-filter the back projection and remove the noise. For example, you can do this by retrieving connected components with findContours , throwing away contours with small area ( contourArea ), and rendering the remaining contours with drawContours
      */
+<<<<<<< HEAD
     meanShift(
       probImage: Mat,
       window: Rect,
       criteria: TermCriteria,
     ): [number, Rect]
+=======
+    meanShift(probImage: Mat, window: Rect, criteria: TermCriteria): [number, Rect]
+>>>>>>> 162d1a36bbc17b3388b5e3862f93bdaa63728312
     findTransformECC(
       templateImage: Mat,
       inputImage: Mat,

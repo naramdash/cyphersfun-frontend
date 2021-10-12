@@ -146,11 +146,15 @@ declare module Subdiv2D {
      */
     locate(pt: Point, edge: number, vertex: number): number
     newEdge(): number
+<<<<<<< HEAD
     newPoint(
       pt: Point,
       isvirtual: boolean,
       firstEdge?: number,
     ): number
+=======
+    newPoint(pt: Point, isvirtual: boolean, firstEdge?: number): number
+>>>>>>> 162d1a36bbc17b3388b5e3862f93bdaa63728312
     /**
      * Returns next edge around the edge origin
      * @param edge Subdivision edge ID

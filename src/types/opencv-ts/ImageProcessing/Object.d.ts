@@ -28,6 +28,7 @@ declare module ObjectDetection {
      * @param method Parameter specifying the comparison method, @see TemplateMatchModes
      * @param mask Mask of searched template. It must have the same datatype and size with templ. It is not set by default. Currently, only the TM_SQDIFF and TM_CCORR_NORMED methods are supported
      */
+<<<<<<< HEAD
     matchTemplate(
       image: Mat,
       templ: Mat,
@@ -35,6 +36,9 @@ declare module ObjectDetection {
       method: TemplateMatchModes,
       mask: Mat,
     ): void
+=======
+    matchTemplate(image: Mat, templ: Mat, result: Mat, method: TemplateMatchModes, mask: Mat): void
+>>>>>>> 162d1a36bbc17b3388b5e3862f93bdaa63728312
   }
 }
 

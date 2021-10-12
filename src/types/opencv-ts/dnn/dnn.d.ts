@@ -25,6 +25,7 @@ declare module DNN {
      * @param mean scalar with mean values which are subtracted from channels. Values are intended to be in (mean-R, mean-G, mean-B) order if image has BGR ordering and swapRB is true
      * @param swapRB flag which indicates that swap first and last channels in 3-channel image is necessary
      */
+<<<<<<< HEAD
     blobFromImage(
       image: Mat,
       scalefactor: number,
@@ -32,6 +33,9 @@ declare module DNN {
       mean: Scalar,
       swapRB: boolean,
     ): Mat
+=======
+    blobFromImage(image: Mat, scalefactor: number, size: Size, mean: Scalar, swapRB: boolean): Mat
+>>>>>>> 162d1a36bbc17b3388b5e3862f93bdaa63728312
     /**
      * Read deep learning network represented in one of the supported formats
      * @param config Text file contains network configuration. It could be a file with the following extensions:

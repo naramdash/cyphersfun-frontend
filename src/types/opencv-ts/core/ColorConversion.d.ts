@@ -427,12 +427,16 @@ declare module ColorConversions {
      * @param code color space conversion code.
      * @param dstCn number of channels in the destination image; if the parameter is 0, the number of the channels is derived automatically from src and code.
      */
+<<<<<<< HEAD
     cvtColor(
       src: Mat,
       dst: Mat,
       code: ColorConversionCodes,
       dstCn?: number,
     ): void
+=======
+    cvtColor(src: Mat, dst: Mat, code: ColorConversionCodes, dstCn?: number): void
+>>>>>>> 162d1a36bbc17b3388b5e3862f93bdaa63728312
     /**
      * Converts an image from one color space to another where the source image is stored in two planes. This function only supports YUV420 to RGB conversion as of now.
      * @param src1 8-bit image (CV_8U) of the Y plane.

@@ -1,6 +1,10 @@
 {
   "trailingComma": "all",
+<<<<<<< HEAD
   "printWidth": 70,
+=======
+  "printWidth": 100,
+>>>>>>> 162d1a36bbc17b3388b5e3862f93bdaa63728312
   "tabWidth": 2,
   "semi": false,
   "singleQuote": true

@@ -91,11 +91,15 @@ declare module GeometricImageTransformations {
      * @param dst Coordinates of the corresponding quadrangle vertices in the destination image
      * @param solveMethod method passed to cv::solve (DecompTypes)
      */
+<<<<<<< HEAD
     getPerspectiveTransform(
       src: Mat,
       dst: Mat,
       solveMethod?: number | DecompTypes,
     ): Mat
+=======
+    getPerspectiveTransform(src: Mat, dst: Mat, solveMethod?: number | DecompTypes): Mat
+>>>>>>> 162d1a36bbc17b3388b5e3862f93bdaa63728312
     /**
      * Retrieves a pixel rectangle from an image with sub-pixel accuracy.
      * @param image Source image
@@ -117,11 +121,15 @@ declare module GeometricImageTransformations {
      * @param angle Rotation angle in degrees. Positive values mean counter-clockwise rotation (the coordinate origin is assumed to be the top-left corner).
      * @param scale Isotropic scale factor.
      */
+<<<<<<< HEAD
     getRotationMatrix2D(
       center: Point,
       angle: number,
       scale: number,
     ): Mat
+=======
+    getRotationMatrix2D(center: Point, angle: number, scale: number): Mat
+>>>>>>> 162d1a36bbc17b3388b5e3862f93bdaa63728312
     /**
      * Inverts an affine transformation
      * @param M Original affine transformation
@@ -136,6 +144,7 @@ declare module GeometricImageTransformations {
      * @param maxRadius
      * @param flags
      */
+<<<<<<< HEAD
     linearPolar(
       src: Mat,
       dst: Mat,
@@ -143,6 +152,9 @@ declare module GeometricImageTransformations {
       maxRadius: number,
       flags: WarpPolarMode,
     ): void
+=======
+    linearPolar(src: Mat, dst: Mat, center: Point, maxRadius: number, flags: WarpPolarMode): void
+>>>>>>> 162d1a36bbc17b3388b5e3862f93bdaa63728312
     /**
      * Remaps an image to semilog-polar coordinates space
      * @param src
@@ -151,6 +163,7 @@ declare module GeometricImageTransformations {
      * @param M
      * @param flags
      */
+<<<<<<< HEAD
     logPolar(
       src: Mat,
       dst: Mat,
@@ -158,6 +171,9 @@ declare module GeometricImageTransformations {
       M: number,
       flags: WarpPolarMode,
     ): void
+=======
+    logPolar(src: Mat, dst: Mat, center: Point, M: number, flags: WarpPolarMode): void
+>>>>>>> 162d1a36bbc17b3388b5e3862f93bdaa63728312
     /**
      * Applies a generic geometrical transformation to an image
      * @param src Source image
@@ -217,6 +233,7 @@ declare module GeometricImageTransformations {
       fy: number,
       interpolation: number | InterpolationFlags,
     ): void
+<<<<<<< HEAD
     resize(
       src: Mat,
       dst: Mat,
@@ -224,6 +241,9 @@ declare module GeometricImageTransformations {
       fx: number,
       fy: number,
     ): void
+=======
+    resize(src: Mat, dst: Mat, dsize: Size, fx: number, fy: number): void
+>>>>>>> 162d1a36bbc17b3388b5e3862f93bdaa63728312
     resize(src: Mat, dst: Mat, dsize: Size): void
     /**
      * Applies an affine transformation to an image.
@@ -252,6 +272,7 @@ declare module GeometricImageTransformations {
       flags: InterpolationFlags,
       borderMode: BorderTypes,
     ): void
+<<<<<<< HEAD
     warpAffine(
       src: Mat,
       dst: Mat,
@@ -259,6 +280,9 @@ declare module GeometricImageTransformations {
       dsize: Size,
       flags: InterpolationFlags,
     ): void
+=======
+    warpAffine(src: Mat, dst: Mat, M: Mat, dsize: Size, flags: InterpolationFlags): void
+>>>>>>> 162d1a36bbc17b3388b5e3862f93bdaa63728312
     warpAffine(src: Mat, dst: Mat, M: Mat, dsize: Size): void
     /**
      * Applies a perspective transformation to an image
@@ -287,6 +311,7 @@ declare module GeometricImageTransformations {
       flags: InterpolationFlags,
       borderMode: BorderTypes,
     ): void
+<<<<<<< HEAD
     warpPerspective(
       src: Mat,
       dst: Mat,
@@ -294,6 +319,9 @@ declare module GeometricImageTransformations {
       dsize: Size,
       flags: InterpolationFlags,
     ): void
+=======
+    warpPerspective(src: Mat, dst: Mat, M: Mat, dsize: Size, flags: InterpolationFlags): void
+>>>>>>> 162d1a36bbc17b3388b5e3862f93bdaa63728312
     warpPerspective(src: Mat, dst: Mat, M: Mat, dsize: Size): void
     /**
      *

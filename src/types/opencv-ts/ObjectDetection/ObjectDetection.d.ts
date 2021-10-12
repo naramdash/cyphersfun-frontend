@@ -10,11 +10,15 @@ declare module ObjectDetection {
      * @param weights Minimum possible number of rectangles minus 1. The threshold is used in a group of rectangles to retain it
      * @param groupThreshold
      */
+<<<<<<< HEAD
     groupRectangles(
       rectList: NDArray<Rect>,
       weights: MatVector,
       groupThreshold: number,
     ): void
+=======
+    groupRectangles(rectList: NDArray<Rect>, weights: MatVector, groupThreshold: number): void
+>>>>>>> 162d1a36bbc17b3388b5e3862f93bdaa63728312
   }
 }
 

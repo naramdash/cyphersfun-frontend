@@ -105,6 +105,7 @@ declare module DrawingFunctions {
       thickness: number,
       line_type: LineTypes,
     ): void
+<<<<<<< HEAD
     arrowedLine(
       img: Mat,
       pt1: Point,
@@ -112,6 +113,9 @@ declare module DrawingFunctions {
       color: Scalar,
       thickness: number,
     ): void
+=======
+    arrowedLine(img: Mat, pt1: Point, pt2: Point, color: Scalar, thickness: number): void
+>>>>>>> 162d1a36bbc17b3388b5e3862f93bdaa63728312
     arrowedLine(img: Mat, pt1: Point, pt2: Point, color: Scalar): void
     /**
      * Draws a circle.
@@ -140,6 +144,7 @@ declare module DrawingFunctions {
       thickness: number,
       line_type: LineTypes,
     ): void
+<<<<<<< HEAD
     circle(
       img: Mat,
       center: Point,
@@ -153,6 +158,10 @@ declare module DrawingFunctions {
       radius: number,
       color: Scalar,
     ): void
+=======
+    circle(img: Mat, center: Point, radius: number, color: Scalar, thickness: number): void
+    circle(img: Mat, center: Point, radius: number, color: Scalar): void
+>>>>>>> 162d1a36bbc17b3388b5e3862f93bdaa63728312
     /**
      * Clips the line against the image rectangle.
      * The function cv::clipLine calculates a part of the line segment that is entirely within the specified rectangle. it returns false if the line segment is completely outside the rectangle. Otherwise, it returns true .
@@ -227,12 +236,16 @@ declare module DrawingFunctions {
       color: Scalar,
       thickness: number,
     ): void
+<<<<<<< HEAD
     drawContours(
       image: Mat,
       contours: MatVector,
       contourIdx: number,
       color: Scalar,
     ): void
+=======
+    drawContours(image: Mat, contours: MatVector, contourIdx: number, color: Scalar): void
+>>>>>>> 162d1a36bbc17b3388b5e3862f93bdaa63728312
     /**
      * Draws a marker on a predefined position in an image.
      * @param img Image
@@ -267,12 +280,16 @@ declare module DrawingFunctions {
       markerType: MarkerTypes,
       markerSize: number,
     ): void
+<<<<<<< HEAD
     drawMarker(
       img: Mat,
       position: Point,
       color: Scalar,
       markerType: MarkerTypes,
     ): void
+=======
+    drawMarker(img: Mat, position: Point, color: Scalar, markerType: MarkerTypes): void
+>>>>>>> 162d1a36bbc17b3388b5e3862f93bdaa63728312
     drawMarker(img: Mat, position: Point, color: Scalar): void
     /**
      * Draws a simple or thick elliptic arc or fills an ellipse sector.
@@ -337,6 +354,7 @@ declare module DrawingFunctions {
      * @param thickness Thickness of the ellipse arc outline, if positive. Otherwise, this indicates that a filled ellipse sector is to be drawn.
      * @param lineType Type of the ellipse boundary. See LineTypes
      */
+<<<<<<< HEAD
     ellipse(
       img: Mat,
       box: RotatedRect,
@@ -350,6 +368,10 @@ declare module DrawingFunctions {
       color: Scalar,
       thickness: number,
     ): void
+=======
+    ellipse(img: Mat, box: RotatedRect, color: Scalar, thickness: number, lineType: LineTypes): void
+    ellipse(img: Mat, box: RotatedRect, color: Scalar, thickness: number): void
+>>>>>>> 162d1a36bbc17b3388b5e3862f93bdaa63728312
     ellipse(img: Mat, box: RotatedRect, color: Scalar): void
     /**
      * Approximates an elliptic arc with a polyline.
@@ -378,6 +400,7 @@ declare module DrawingFunctions {
      * @param lineType Type of the polygon boundaries. See LineTypes
      * @param shift Number of fractional bits in the vertex coordinates
      */
+<<<<<<< HEAD
     fillConvexPoly(
       img: Mat,
       pts: Point,
@@ -391,6 +414,10 @@ declare module DrawingFunctions {
       color: Scalar,
       lineType: LineTypes,
     ): void
+=======
+    fillConvexPoly(img: Mat, pts: Point, color: Scalar, lineType: LineTypes, shift: number): void
+    fillConvexPoly(img: Mat, pts: Point, color: Scalar, lineType: LineTypes): void
+>>>>>>> 162d1a36bbc17b3388b5e3862f93bdaa63728312
     fillConvexPoly(img: Mat, pts: Point, color: Scalar): void
     /**
      * Fills the area bounded by one or more polygons
@@ -409,6 +436,7 @@ declare module DrawingFunctions {
       shift: number,
       offset: Point,
     ): void
+<<<<<<< HEAD
     fillPoly(
       img: Mat,
       pts: Point,
@@ -422,6 +450,10 @@ declare module DrawingFunctions {
       color: Scalar,
       lineType: LineTypes,
     ): void
+=======
+    fillPoly(img: Mat, pts: Point, color: Scalar, lineType: LineTypes, shift: number): void
+    fillPoly(img: Mat, pts: Point, color: Scalar, lineType: LineTypes): void
+>>>>>>> 162d1a36bbc17b3388b5e3862f93bdaa63728312
     fillPoly(img: Mat, pts: Point, color: Scalar): void
     /**
      * Calculates the font-specific size to use to achieve a given height in pixels.
@@ -430,6 +462,7 @@ declare module DrawingFunctions {
      * @param thickness Thickness of lines used to render the text.
      * @returns The fontSize to use for cv::putText
      */
+<<<<<<< HEAD
     getFontScaleFromHeight(
       fontFace: HersheyFonts,
       pixelHeight: number,
@@ -439,6 +472,10 @@ declare module DrawingFunctions {
       fontFace: HersheyFonts,
       pixelHeight: number,
     ): number
+=======
+    getFontScaleFromHeight(fontFace: HersheyFonts, pixelHeight: number, thickness: number): number
+    getFontScaleFromHeight(fontFace: HersheyFonts, pixelHeight: number): number
+>>>>>>> 162d1a36bbc17b3388b5e3862f93bdaa63728312
     /**
      * Calculates the width and height of a text string.
      * @param text Input text string
@@ -482,6 +519,7 @@ declare module DrawingFunctions {
       thickness: number,
       lineType: LineTypes,
     ): void
+<<<<<<< HEAD
     line(
       img: Mat,
       pt1: Point,
@@ -489,6 +527,9 @@ declare module DrawingFunctions {
       color: Scalar,
       thickness: number,
     ): void
+=======
+    line(img: Mat, pt1: Point, pt2: Point, color: Scalar, thickness: number): void
+>>>>>>> 162d1a36bbc17b3388b5e3862f93bdaa63728312
     line(img: Mat, pt1: Point, pt2: Point, color: Scalar): void
     /**
      * Draws several polygonal curves
@@ -524,12 +565,16 @@ declare module DrawingFunctions {
       color: Scalar,
       thickness: number,
     ): void
+<<<<<<< HEAD
     polylines(
       img: Mat,
       pts: NDArray<Point>,
       isClosed: boolean,
       color: Scalar,
     ): void
+=======
+    polylines(img: Mat, pts: NDArray<Point>, isClosed: boolean, color: Scalar): void
+>>>>>>> 162d1a36bbc17b3388b5e3862f93bdaa63728312
     /**
      * Draws a text string.
      * @param img Image
@@ -607,6 +652,7 @@ declare module DrawingFunctions {
       thickness: number,
       lineType: LineTypes,
     ): void
+<<<<<<< HEAD
     rectangle(
       img: Mat,
       pt1: Point,
@@ -614,6 +660,9 @@ declare module DrawingFunctions {
       color: Scalar,
       thickness: number,
     ): void
+=======
+    rectangle(img: Mat, pt1: Point, pt2: Point, color: Scalar, thickness: number): void
+>>>>>>> 162d1a36bbc17b3388b5e3862f93bdaa63728312
     rectangle(img: Mat, pt1: Point, pt2: Point, color: Scalar): void
   }
 }

@@ -2,9 +2,13 @@ async function cropImagesFromImage(
   origin: ImageBitmap,
   sections: { x: number; y: number; w: number; h: number }[],
 ) {
+<<<<<<< HEAD
   const ps = sections.map((s) =>
     createImageBitmap(origin, s.x, s.y, s.w, s.h),
   )
+=======
+  const ps = sections.map((s) => createImageBitmap(origin, s.x, s.y, s.w, s.h))
+>>>>>>> 162d1a36bbc17b3388b5e3862f93bdaa63728312
   const results = await Promise.all(ps)
   return results
 }
@@ -18,11 +22,15 @@ function preprocessingForOCR(
 
   // resize
   const dst0 = new cv.Mat()
+<<<<<<< HEAD
   cv.resize(
     imgInCv,
     dst0,
     new cv.Size(imgInCv.cols * resize, imgInCv.rows * resize),
   )
+=======
+  cv.resize(imgInCv, dst0, new cv.Size(imgInCv.cols * resize, imgInCv.rows * resize))
+>>>>>>> 162d1a36bbc17b3388b5e3862f93bdaa63728312
 
   // grayscale
   const dst1 = new cv.Mat()
