@@ -9,7 +9,7 @@
 
 import cv from "opencv-ts";
 
-function preprocessingForOCR(imageSource: string | HTMLCanvasElement | HTMLImageElement, imageDestination: HTMLCanvasElement) {
+function preprocessingForOCR(imageSource:HTMLCanvasElement, imageDestination: HTMLCanvasElement) {
     const imgInCv = cv.imread(imageSource);
 
     const dst0 = new cv.Mat(imgInCv.cols, imgInCv.rows, cv.CV_8UC4);

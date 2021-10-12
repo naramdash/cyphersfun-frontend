@@ -33,16 +33,7 @@ async function screenshotFromVideo(videoElem: HTMLVideoElement) {
 async function renderBitmapInCanvas(bitmap: ImageBitmap, canvasElem: HTMLCanvasElement) {
     canvasElem.width = bitmap.width
     canvasElem.height = bitmap.height
-
-    const context = canvasElem.getContext("bitmaprenderer")
-    if (context) {
-        // transfer the ImageBitmap to it
-        context.transferFromImageBitmap(bitmap);
-    } else {
-        // in case someone supports createImageBitmap only
-        // twice in memory...
-        canvasElem.getContext("2d")!.drawImage(bitmap, 0, 0);
-    }
+    canvasElem.getContext("2d")!.drawImage(bitmap, 0, 0);
 }
 
 export {
