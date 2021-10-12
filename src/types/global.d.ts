@@ -1,5 +1,5 @@
-import opencv from "./opencv-ts/opencv";
+import opencv from './opencv-ts/opencv'
 
 declare global {
-    const cv: opencv;
+  const cv: opencv
 }
