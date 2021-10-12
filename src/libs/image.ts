@@ -7,7 +7,11 @@
             //     500
             //   );
 
-import cv from "opencv-ts";
+// import cv from "opencv-ts";
+// import cvd from '../opencv-ts/src/opencv'
+// const cv = (globalThis as any).cv as cvd;
+// import cv from '@techstark/opencv-js'
+// import cv from '../opencv-ts/src/opencv'
 
 function preprocessingForOCR(imageSource:HTMLCanvasElement, imageDestination: HTMLCanvasElement) {
     const imgInCv = cv.imread(imageSource);

@@ -30,7 +30,7 @@ async function screenshot() {
 
 async function ocrFromScreenshot() {
     const destCanvasElem = document.createElement("canvas");
-    preprocessingForOCR(canvasRef.value!, destCanvasElem);
+    preprocessingForOCR(canvasRef.value!, canvasRef.value!);
 
     // ocr(destCanvasElem);
 }
