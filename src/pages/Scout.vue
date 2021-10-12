@@ -41,13 +41,8 @@ async function ocrFromScreenshot() {
     <h1>scout</h1>
 
     <p>
-<<<<<<< HEAD
       This example shows you the contents of the selected part of your
       display. Click the Start Capture button to begin.
-=======
-      This example shows you the contents of the selected part of your display. Click the Start
-      Capture button to begin.
->>>>>>> 162d1a36bbc17b3388b5e3862f93bdaa63728312
     </p>
 
     <p>
