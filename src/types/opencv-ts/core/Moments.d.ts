@@ -1,7 +1,7 @@
 declare module Moments {
-    interface Moments {
-        new() : Moments;
-    }
+  interface Moments {
+    new (): Moments
+  }
 }
 
-export = Moments;
+export = Moments
