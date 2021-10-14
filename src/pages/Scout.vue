@@ -10,10 +10,14 @@ import {
   screenshotFromVideo,
   renderBitmapInCanvas,
 } from '../libs/screen'
+import UserWithNickname from '../components/UserWithNickname.vue'
 // import { ocr } from '../libs/tesseract';
 
 const videoRef = ref<HTMLVideoElement>()
 const canvasRef = ref<HTMLCanvasElement>()
+
+const friendlyNicknames = ref<ImageBitmap[]>([])
+const enemyNicknames = ref<ImageBitmap[]>([])
 
 function startCapture() {
   startCaptureToVideo(videoRef.value!)
@@ -28,11 +32,17 @@ async function screenshot() {
   await renderBitmapInCanvas(screenshotBitmap, canvasRef.value!)
 }
 
-async function ocrFromScreenshot() {
-  const destCanvasElem = document.createElement('canvas')
+function ocrFromScreenshot() {
+  // const destCanvasElem = document.createElement('canvas')
   preprocessingForOCR(canvasRef.value!, canvasRef.value!)
 
-  // ocr(destCanvasElem);
+  // 이미지 자르기 using cyphers.sizes.ts
+
+  // 자른 이미지 ocr (1x 2x 3x);
+
+  // {  nicknameCandidates: {1x: {image, string} 2x 3x}[] }
+
+
 }
 </script>
 
@@ -53,10 +63,29 @@ async function ocrFromScreenshot() {
     </p>
 
     <div>
-      <video ref="videoRef" style="width: 300px" autoplay></video>
-      <canvas ref="canvasRef"></canvas>
+      <video class="screen-video" ref="videoRef" autoplay></video>
+      <canvas class="screenshot" ref="canvasRef"></canvas>
+    </div>
+
+    <div>
+      <div>
+        <h2>Enemy</h2>
+        <UserWithNickname :key="index" v-for="(nickname, index) in enemyNicknames" :bitmap="nickname" />
+      </div>
+      <div>
+        <h2>Friendly</h2>
+        <UserWithNickname :key="index" v-for="(nickname, index) in friendlyNicknames" :bitmap="nickname" />
+      </div>
     </div>
   </MainLayout>
 </template>
 
-<style scoped></style>
+<style scoped>
+.screen-video{
+  width: 300px;
+}
+.screenshot {
+  width: 300px;
+}
+
+</style>
