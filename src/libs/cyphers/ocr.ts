@@ -5,6 +5,7 @@ import {
   resize,
 } from '../image'
 import { ocr } from '../tesseract'
+import { filterOutRawByNicknameRule } from './nickname'
 
 const DefaultResizeMultipleValue = 5
 
@@ -18,7 +19,8 @@ async function ocrFromNicknameSection(
   const preprocessedCanvas = convertMatToCanvas(preprocessedMat)
 
   const text = await ocr(preprocessedCanvas)
-  return text
+  const filteredText = filterOutRawByNicknameRule(text)
+  return filteredText
 }
 
 export { ocrFromNicknameSection }
