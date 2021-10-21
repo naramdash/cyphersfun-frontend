@@ -11,7 +11,8 @@ async function ocr(canvasElem: HTMLCanvasElement) {
     logger: (m) => console.log(m),
   })
 
-  alert(data.text)
+  // alert(data.text)
+  return data.text
 }
 
 export { ocr }

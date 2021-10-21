@@ -1,21 +1,19 @@
 <script setup lang="ts">
 import { ref } from '@vue/reactivity'
-
 import MainLayout from '../layouts/MainLayout.vue'
-import { preprocessingForOCR } from '../libs/image'
-
+import { renderBitmapInCanvas } from '../libs/image'
 import {
   startCaptureToVideo,
   stopCaptureToVideo,
   screenshotFromVideo,
-  renderBitmapInCanvas,
 } from '../libs/screen'
 import UserWithNickname from '../components/UserWithNickname.vue'
-// import { ocr } from '../libs/tesseract';
+import { getNicknameBitmapsfromLoadingScreenshot } from '../libs/cyphers/onLoadGame/screen'
 
 const videoRef = ref<HTMLVideoElement>()
 const canvasRef = ref<HTMLCanvasElement>()
 
+const screenshot = ref<ImageBitmap>()
 const friendlyNicknames = ref<ImageBitmap[]>([])
 const enemyNicknames = ref<ImageBitmap[]>([])
 
@@ -27,22 +25,23 @@ function stopCapture() {
   stopCaptureToVideo(videoRef.value!)
 }
 
-async function screenshot() {
+async function takeScreenshot() {
   const screenshotBitmap = await screenshotFromVideo(videoRef.value!)
-  await renderBitmapInCanvas(screenshotBitmap, canvasRef.value!)
+  screenshot.value = screenshotBitmap
+  renderBitmapInCanvas(screenshotBitmap, canvasRef.value!)
 }
 
-function ocrFromScreenshot() {
-  // const destCanvasElem = document.createElement('canvas')
-  preprocessingForOCR(canvasRef.value!, canvasRef.value!)
-
-  // 이미지 자르기 using cyphers.sizes.ts
-
-  // 자른 이미지 ocr (1x 2x 3x);
-
-  // {  nicknameCandidates: {1x: {image, string} 2x 3x}[] }
-
-
+async function getNicknames() {
+  if(screenshot.value)
+  {
+    const bitmaps = await getNicknameBitmapsfromLoadingScreenshot(screenshot.value)
+    if(bitmaps === undefined) {
+      alert("error")
+      return
+    }
+    enemyNicknames.value = bitmaps.enemies
+    friendlyNicknames.value = bitmaps.friendly
+  }
 }
 </script>
 
@@ -58,8 +57,8 @@ function ocrFromScreenshot() {
     <p>
       <button @click="startCapture">Start Capture</button>
       <button @click="stopCapture">Stop Capture</button>
-      <button @click="screenshot">Screenshot</button>
-      <button @click="ocrFromScreenshot">OCR from Screenshot</button>
+      <button @click="takeScreenshot">Screenshot</button>
+      <button @click="getNicknames">Get Nicknames</button>
     </p>
 
     <div>

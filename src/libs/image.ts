@@ -1,38 +1,81 @@
-// const imageBitmap = await createImageBitmap(
-//     imageBitmap2,
-//     100,
-//     200,
-//     500,
-//     500
-//   );
+import { Mat } from '../types/opencv-ts/opencv'
 
-// import cv from "opencv-ts";
-// import cvd from '../opencv-ts/src/opencv'
-// const cv = (globalThis as any).cv as cvd;
-// import cv from '@techstark/opencv-js'
-// import cv from '../opencv-ts/src/opencv'
+function preprocessingForOCR(imageSource: Mat) {
+  const { cols: srcCols, rows: srcRows } = imageSource
 
-function preprocessingForOCR(
-  imageSource: HTMLCanvasElement,
-  imageDestination: HTMLCanvasElement,
-) {
-  const imgInCv = cv.imread(imageSource)
+  const dst1 = new cv.Mat(srcCols, srcRows, cv.CV_8UC4)
+  cv.cvtColor(imageSource, dst1, cv.COLOR_BGR2GRAY)
 
-  const dst0 = new cv.Mat(imgInCv.cols, imgInCv.rows, cv.CV_8UC4)
-
-  cv.resize(
-    imgInCv,
-    dst0,
-    new cv.Size(imgInCv.cols * 1, imgInCv.rows * 1),
-  )
-
-  const dst1 = new cv.Mat(imgInCv.cols, imgInCv.rows, cv.CV_8UC4)
-  cv.cvtColor(dst0, dst1, cv.COLOR_BGR2GRAY)
-  const dst2 = new cv.Mat(imgInCv.cols, imgInCv.rows, cv.CV_8UC4)
+  const dst2 = new cv.Mat(srcCols, srcRows, cv.CV_8UC4)
   cv.threshold(dst1, dst2, 100, 230, cv.THRESH_BINARY)
-  const dst3 = new cv.Mat(imgInCv.cols, imgInCv.rows, cv.CV_8UC4)
 
-  cv.imshow(imageDestination, dst2)
+  // unused
+  const dst3 = new cv.Mat(srcCols, srcRows, cv.CV_8UC4)
+
+  // cv.imshow(imageDestination, dst2)
+  return dst2
 }
 
-export { preprocessingForOCR }
+function drawMatInCanvas(mat: Mat, canvasElem: HTMLCanvasElement) {
+  cv.imshow(canvasElem, mat)
+}
+function convertMatToCanvas(mat: Mat): HTMLCanvasElement {
+  const canvasElem = document.createElement('canvas')
+  cv.imshow(canvasElem, mat)
+  return canvasElem
+}
+
+async function crop(
+  bitmapSource: ImageBitmapSource,
+  position: { x: number; y: number; w: number; h: number },
+) {
+  const imageBitmap = await createImageBitmap(
+    bitmapSource,
+    position.x,
+    position.y,
+    position.w,
+    position.h,
+  )
+
+  return imageBitmap
+}
+
+function resize(imageSource: Mat, multiple: number): Mat {
+  const { cols: srcCols, rows: srcRows } = imageSource
+
+  console.log('resize: ', multiple)
+
+  const dst0 = new cv.Mat(srcCols, srcRows, cv.CV_8UC4)
+  cv.resize(
+    imageSource,
+    dst0,
+    new cv.Size(srcCols * multiple, srcRows * multiple),
+  )
+  return dst0
+}
+
+function renderBitmapInCanvas(
+  bitmap: ImageBitmap,
+  canvasElem: HTMLCanvasElement,
+) {
+  canvasElem.width = bitmap.width
+  canvasElem.height = bitmap.height
+  canvasElem.getContext('2d')!.drawImage(bitmap, 0, 0)
+}
+
+function convertBitMapToMat(bitmap: ImageBitmap) {
+  const canvasElem = document.createElement('canvas')
+  renderBitmapInCanvas(bitmap, canvasElem)
+  const mat = cv.imread(canvasElem)
+  return mat
+}
+
+export {
+  crop,
+  resize,
+  drawMatInCanvas,
+  convertMatToCanvas,
+  preprocessingForOCR,
+  renderBitmapInCanvas,
+  convertBitMapToMat,
+}

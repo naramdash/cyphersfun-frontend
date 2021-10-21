@@ -1,16 +1,22 @@
+const MAX_WIDTH = 2560
+const MAX_HEIGHT = 1080
+
 const displayMediaOptions: any = {
   video: {
-    cursor: 'always',
-    height: 1080,
-    width: 2560,
+    cursor: false,
+    height: MAX_HEIGHT,
+    width: MAX_WIDTH,
+    resizeMode: 'crop-and-scale',
   },
   audio: false,
 }
 
 async function startCaptureToVideo(videoElem: HTMLVideoElement) {
-  videoElem.srcObject = await navigator.mediaDevices.getDisplayMedia(
+  const displayMedia = await navigator.mediaDevices.getDisplayMedia(
     displayMediaOptions,
   )
+
+  videoElem.srcObject = displayMedia
 }
 
 function stopCaptureToVideo(videoElem: HTMLVideoElement) {
@@ -30,18 +36,8 @@ async function screenshotFromVideo(videoElem: HTMLVideoElement) {
   return imageBitmap
 }
 
-async function renderBitmapInCanvas(
-  bitmap: ImageBitmap,
-  canvasElem: HTMLCanvasElement,
-) {
-  canvasElem.width = bitmap.width
-  canvasElem.height = bitmap.height
-  canvasElem.getContext('2d')!.drawImage(bitmap, 0, 0)
-}
-
 export {
   startCaptureToVideo,
   stopCaptureToVideo,
   screenshotFromVideo,
-  renderBitmapInCanvas,
 }
